@@ -12,7 +12,7 @@ type WeatherData = Readonly<{
 
 async function genData(): Promise<WeatherData> {
   const response = await fetch(
-    "https://vjkuarupgi.execute-api.us-east-2.amazonaws.com/default"
+    "https://vjkuarupgi.execute-api.us-east-2.amazonaws.com/default",
   );
 
   return await response.json();
@@ -27,7 +27,8 @@ export default async function WeatherWidget() {
 
   return (
     <figure
-      className={`fixed bottom-4 right-4 flex flex-col items-center p-2 rounded-2xl ${gradient} animate-fade-in-right`}
+      className={`fixed bottom-4 right-4 flex flex-col items-center rounded-2xl p-2 text-white
+      ${gradient} animate-fade-in-right motion-reduce:animate-none`}
     >
       <h5 className="font-bold">{weather.city}</h5>
       <Tooltip content={weather.description} placement="left">
