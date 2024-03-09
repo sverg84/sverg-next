@@ -1,0 +1,62 @@
+{
+  "version": "36.0.0",
+  "files": {
+    "66f3d06a2e0da446e2f40da76afe52f41aea8bbdcb54cd9b0b30e70e8717bab7": {
+      "source": {
+        "path": "asset.66f3d06a2e0da446e2f40da76afe52f41aea8bbdcb54cd9b0b30e70e8717bab7",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "730335421834-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-730335421834-us-east-1",
+          "objectKey": "66f3d06a2e0da446e2f40da76afe52f41aea8bbdcb54cd9b0b30e70e8717bab7.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::730335421834:role/cdk-hnb659fds-file-publishing-role-730335421834-us-east-1"
+        }
+      }
+    },
+    "4e26bf2d0a26f2097fb2b261f22bb51e3f6b4b52635777b1e54edbd8e2d58c35": {
+      "source": {
+        "path": "asset.4e26bf2d0a26f2097fb2b261f22bb51e3f6b4b52635777b1e54edbd8e2d58c35",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "730335421834-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-730335421834-us-east-1",
+          "objectKey": "4e26bf2d0a26f2097fb2b261f22bb51e3f6b4b52635777b1e54edbd8e2d58c35.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::730335421834:role/cdk-hnb659fds-file-publishing-role-730335421834-us-east-1"
+        }
+      }
+    },
+    "8b3863df19ef87ae356da6dee66c6d642ce86e8703ef177e2365347eb7146c51": {
+      "source": {
+        "path": "asset.8b3863df19ef87ae356da6dee66c6d642ce86e8703ef177e2365347eb7146c51.zip",
+        "packaging": "file"
+      },
+      "destinations": {
+        "730335421834-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-730335421834-us-east-1",
+          "objectKey": "8b3863df19ef87ae356da6dee66c6d642ce86e8703ef177e2365347eb7146c51.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::730335421834:role/cdk-hnb659fds-file-publishing-role-730335421834-us-east-1"
+        }
+      }
+    },
+    "189c6bb6284ad51ac6b271542a656baa00c56af09b1652895fbcb7d2b5a5f65f": {
+      "source": {
+        "path": "stephenvergara-sverg-next-Site.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "730335421834-us-east-1": {
+          "bucketName": "cdk-hnb659fds-assets-730335421834-us-east-1",
+          "objectKey": "189c6bb6284ad51ac6b271542a656baa00c56af09b1652895fbcb7d2b5a5f65f.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::730335421834:role/cdk-hnb659fds-file-publishing-role-730335421834-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

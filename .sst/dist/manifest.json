@@ -1,0 +1,150 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "stephenvergara-sverg-next-Site.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "stephenvergara-sverg-next-Site.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "stephenvergara-sverg-next-Site": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://730335421834/us-east-1",
+      "properties": {
+        "templateFile": "stephenvergara-sverg-next-Site.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "sst:app": "sverg-next",
+          "sst:stage": "stephenvergara"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::730335421834:role/cdk-hnb659fds-deploy-role-730335421834-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::730335421834:role/cdk-hnb659fds-cfn-exec-role-730335421834-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-730335421834-us-east-1/189c6bb6284ad51ac6b271542a656baa00c56af09b1652895fbcb7d2b5a5f65f.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "stephenvergara-sverg-next-Site.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::730335421834:role/cdk-hnb659fds-lookup-role-730335421834-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "stephenvergara-sverg-next-Site.assets"
+      ],
+      "metadata": {
+        "/stephenvergara-sverg-next-Site": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "sst:app",
+                "Value": "sverg-next"
+              },
+              {
+                "Key": "sst:stage",
+                "Value": "stephenvergara"
+              }
+            ]
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/CustomResourceHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomResourceHandlerServiceRole41AEC181"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/CustomResourceHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomResourceHandlerE8FB56BA"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/site/ServerFunctionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionRole1F8F4FAC"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/site/ServerFunction/AssetReplacerPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionAssetReplacerPolicy304BF125"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/site/ServerFunction/AssetReplacer/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionAssetReplacer9A11D516"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/site/ServerFunction/ServerFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunction6DFA6F1B"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/site/ServerFunction/ServerFunction/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteServerFunctionLogRetention7123678D"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/site/Parameter_url/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "siteParameterurl3D1716BC"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/SSTStackOutputSSTMetadata": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SSTMetadata"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/stephenvergara-sverg-next-Site/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "stephenvergara-sverg-next-Site"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
