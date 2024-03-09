@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { WeatherData } from "./types/WeatherData";
-import { Card } from "flowbite-react";
 
 async function genData(): Promise<WeatherData> {
   const response = await fetch(
