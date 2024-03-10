@@ -79,7 +79,7 @@ function TechLink({ href, label, leadingText }: TechLinkProps) {
 
 export default function AppFooter() {
   return (
-    <Footer container>
+    <Footer className="rounded-none" container>
       <div className="w-full">
         <div className="grid w-full justify-between sm:flex sm:justify-around md:flex md:grid-cols-1">
           <div className="grid grid-cols-2 items-center justify-items-center gap-8 text-sm">

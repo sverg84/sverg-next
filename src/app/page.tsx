@@ -1,7 +1,6 @@
 import Image from "next/image";
 import WeatherWidget from "./components/weather";
 import { Suspense } from "react";
-import AboutMeCard from "./components/about/card";
 import Hero from "./components/hero";
 
 export default function Home() {

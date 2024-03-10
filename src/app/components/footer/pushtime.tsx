@@ -22,11 +22,8 @@ function relativeTimeFromElapsed(elapsed: number): string {
   return "";
 }
 
-async function genData(): Promise<string> {
-  // TODO: Replace with info about sverg-next repo + change to Vercel function if possible
-  const response = await fetch(
-    "https://2wxny1ysq9.execute-api.us-east-2.amazonaws.com/default",
-  );
+async function genData(): Promise<number> {
+  const response = await fetch(`${process.env.URL}/api/deployment`);
   return await response.json();
 }
 
