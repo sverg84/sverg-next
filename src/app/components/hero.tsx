@@ -1,5 +1,9 @@
 import { Button, Tooltip } from "flowbite-react";
 import MyName from "../consts/name";
+import GitHubButton from "./buttons/github";
+import LinkedInButton from "./buttons/linkedin";
+import ResumeButton from "./buttons/resume";
+import EmailButton from "./buttons/email";
 
 const LABEL =
   "Cypress Cove at Point Lobos State Natural Reserve, Carmel-by-the-Sea, California";
@@ -26,15 +30,11 @@ export default function Hero() {
             with an eagerness to learn!
           </p>
 
-          <div className="flex w-full gap-x-1 sm:w-auto">
-            <Button />
-            <Button />
-            <Button />
-            <Button />
-            {/* <ResumeButton />
+          <div className="flex w-full gap-x-4 px-12 sm:w-auto">
+            <ResumeButton />
             <GitHubButton />
             <LinkedInButton />
-            <EmailButton /> */}
+            <EmailButton />
           </div>
           <div className="self-center">
             <Tooltip
