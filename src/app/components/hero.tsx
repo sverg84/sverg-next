@@ -4,17 +4,23 @@ import GitHubButton from "./buttons/github";
 import LinkedInButton from "./buttons/linkedin";
 import ResumeButton from "./buttons/resume";
 import EmailButton from "./buttons/email";
+import Image from "next/image";
+
+import cove from "../../../public/point_lobos.webp";
 
 const LABEL =
   "Cypress Cove at Point Lobos State Natural Reserve, Carmel-by-the-Sea, California";
 
 export default function Hero() {
   return (
-    <div
-      aria-label={`Photo of ${LABEL}`}
-      className="flex h-[calc(100vh-3.75rem)] w-screen items-center bg-hero bg-cover bg-center"
-      role="img"
-    >
+    <div className="flex h-[calc(100vh-3.75rem)] w-screen items-center bg-hero bg-cover bg-center">
+      <Image
+        alt={LABEL}
+        className="z-[-1]"
+        fill={true}
+        priority={true}
+        src={cove}
+      />
       <div className="mx-8 flex flex-row justify-between sm:flex-col">
         <div className="flex flex-col gap-y-10 sm:mr-24">
           <h1
