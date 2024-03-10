@@ -11,12 +11,49 @@ type WeatherData = Readonly<{
 }>;
 
 async function genData(): Promise<WeatherData> {
-  // TODO: Change to Vercel function if possible
-  const response = await fetch(
-    "https://vjkuarupgi.execute-api.us-east-2.amazonaws.com/default",
-  );
+  const baseUrl = "https://api.openweathermap.org/";
+  const id = `&appid=${process.env.WEATHER_TOKEN}`;
 
-  return await response.json();
+  const geocode = await fetch(`${baseUrl}geo/1.0/direct?q=Seattle,WA,USA${id}`);
+
+  const [{ lat, lon }] = await geocode.json();
+
+  const weatherUri = `${baseUrl}data/2.5/weather?lat=${lat}&lon=${lon}${id}`;
+
+  const init = { next: { revalidate: 60 } };
+
+  const [responseImperial, responseMetric] = await Promise.all([
+    fetch(`${weatherUri}&units=imperial`, init),
+    fetch(`${weatherUri}&units=metric`, init),
+  ]);
+
+  const [dataImperial, dataMetric] = await Promise.all([
+    responseImperial.json(),
+    responseMetric.json(),
+  ]);
+
+  const {
+    main: { temp: fahrenheit },
+    name: city,
+    weather: [weather],
+  } = dataImperial;
+
+  const {
+    main: { temp: celsius },
+  } = dataMetric;
+
+  const { description, icon } = weather;
+
+  const iconUrl = `https://openweathermap.org/img/wn/${icon}@4x.png`;
+
+  return {
+    city,
+    description,
+    icon: iconUrl,
+    night: icon.slice(2) === "n",
+    fahrenheit: Math.round(fahrenheit),
+    celsius: Math.round(celsius),
+  };
 }
 
 export default async function WeatherWidget() {
@@ -47,3 +84,5 @@ export default async function WeatherWidget() {
     </figure>
   );
 }
+
+export const runtime = "edge";
