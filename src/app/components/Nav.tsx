@@ -8,7 +8,7 @@ import {
   NavbarToggle,
 } from "flowbite-react";
 import Image from "next/image";
-import MyName from "../consts/MyName";
+import MyName from "../consts/name";
 
 export default function Nav() {
   return (
@@ -28,7 +28,7 @@ export default function Nav() {
           {MyName}
         </span>
       </NavbarBrand>
-      <div className="inline-flex justify-end grow mr-8">
+      <div className="mr-8 inline-flex grow justify-end">
         <DarkThemeToggle />
       </div>
       <NavbarToggle />
@@ -39,9 +39,12 @@ export default function Nav() {
         <NavbarLink as={Link} href="#">
           About
         </NavbarLink>
-        <NavbarLink href="#">Services</NavbarLink>
-        <NavbarLink href="#">Pricing</NavbarLink>
-        <NavbarLink href="#">Contact</NavbarLink>
+        <NavbarLink as={Link} href="https://sverg84.github.io/">
+          v1 (GitHub Pages)
+        </NavbarLink>
+        <NavbarLink as={Link} href="https://sverg84.com">
+          v2 (Remix + AWS)
+        </NavbarLink>
       </NavbarCollapse>
     </Navbar>
   );

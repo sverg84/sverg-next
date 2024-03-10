@@ -1,11 +1,15 @@
 import Image from "next/image";
-import WeatherWidget from "./components/WeatherWidget";
+import WeatherWidget from "./components/weather";
 import { Suspense } from "react";
+import AboutMeCard from "./components/about/card";
+import Hero from "./components/hero";
 
 export default function Home() {
   return (
     <>
+      <Hero />
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        {/* <AboutMeCard /> */}
         <div
           className="relative z-[-1] flex place-items-center before:absolute before:h-[300px]
             before:w-full before:-translate-x-1/2 before:rounded-full
