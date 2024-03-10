@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Flowbite, ThemeModeScript } from "flowbite-react";
 import Nav from "./components/Nav";
-import AppFooter from "./components/footer";
+import AppFooter from "./components/footer/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 

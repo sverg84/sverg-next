@@ -10,6 +10,8 @@ import {
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiLetterboxd } from "react-icons/si";
 import Link from "next/link";
+import { Suspense } from "react";
+import LatestPushTime from "./pushtime";
 
 type IconLinkProps = Readonly<{ href: string; icon: IconType; label: string }>;
 type TechLinkProps = Readonly<{
@@ -101,7 +103,9 @@ export default function AppFooter() {
         </div>
         <FooterDivider />
         <div className="w-full sm:flex sm:items-center sm:justify-between">
-          TODO: Add update time here
+          <Suspense fallback={<div />}>
+            <LatestPushTime />
+          </Suspense>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             {icons.map((item) => (
               <IconLink key={item.label} {...item} />

@@ -11,6 +11,7 @@ type WeatherData = Readonly<{
 }>;
 
 async function genData(): Promise<WeatherData> {
+  // TODO: Change to Vercel function if possible
   const response = await fetch(
     "https://vjkuarupgi.execute-api.us-east-2.amazonaws.com/default",
   );
