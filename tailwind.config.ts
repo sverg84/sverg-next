@@ -21,6 +21,10 @@ const config: Config = {
         hero: `linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), 
               url('https://dyovadmggqv7dmnp.public.blob.vercel-storage.com/point_lobos-FKO9xYrTWsMSvXmkwyY43OqTHMzpyy.webp')`,
       },
+      colors: {
+        "night-sky": "#283e51",
+        "night-sky-2": "#0a2342",
+      },
       keyframes: {
         "fade-in-right": {
           "0%": {
