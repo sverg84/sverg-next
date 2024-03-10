@@ -5,6 +5,7 @@ import { Flowbite, ThemeModeScript } from "flowbite-react";
 import Nav from "./components/Nav";
 import AppFooter from "./components/footer/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
           <AppFooter />
         </Flowbite>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
