@@ -22,15 +22,15 @@ function relativeTimeFromElapsed(elapsed: number): string {
   return "";
 }
 
-async function genData(): Promise<number> {
+async function genData(): Promise<{ ready: number }> {
   const response = await fetch(`${process.env.URL}/api/deployment`);
   return await response.json();
 }
 
 export default async function LatestPushTime() {
-  const pushTime = await genData();
+  const { ready } = await genData();
 
-  const pushTimeAsDate = new Date(pushTime);
+  const pushTimeAsDate = new Date(ready);
   const timeSinceLastPush = pushTimeAsDate.getTime() - new Date().getTime();
   return (
     <div className="flex gap-x-2">

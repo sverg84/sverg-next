@@ -17,5 +17,5 @@ export async function GET() {
     deployments: [{ ready }],
   } = await response.json();
 
-  return NextResponse.json(ready);
+  return NextResponse.json({ ready });
 }
