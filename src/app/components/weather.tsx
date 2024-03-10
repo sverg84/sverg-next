@@ -10,15 +10,14 @@ type WeatherData = Readonly<{
   night: boolean;
 }>;
 
+const SEATTLE_LATITUDE = 47.6061;
+const SEATTLE_LONGITUDE = -122.3328;
+
 async function genData(): Promise<WeatherData> {
   const baseUrl = "https://api.openweathermap.org/";
   const id = `&appid=${process.env.WEATHER_TOKEN}`;
 
-  const geocode = await fetch(`${baseUrl}geo/1.0/direct?q=Seattle,WA,USA${id}`);
-
-  const [{ lat, lon }] = await geocode.json();
-
-  const weatherUri = `${baseUrl}data/2.5/weather?lat=${lat}&lon=${lon}${id}`;
+  const weatherUri = `${baseUrl}data/2.5/weather?lat=${SEATTLE_LATITUDE}&lon=${SEATTLE_LONGITUDE}${id}`;
 
   const init = { next: { revalidate: 60 } };
 
