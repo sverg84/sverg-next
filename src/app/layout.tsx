@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Flowbite, ThemeModeScript } from "flowbite-react";
 import Nav from "./components/Nav";
+import AppFooter from "./components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Flowbite>
           <Nav />
           {children}
+          <AppFooter />
         </Flowbite>
       </body>
     </html>

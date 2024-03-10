@@ -1,4 +1,4 @@
-import { Button, Tooltip } from "flowbite-react";
+import { Tooltip } from "flowbite-react";
 import MyName from "../consts/name";
 import GitHubButton from "./buttons/github";
 import LinkedInButton from "./buttons/linkedin";
@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <div
       aria-label={`Photo of ${LABEL}`}
-      className="bg-hero flex h-[calc(100vh-3.75rem)] w-screen items-center bg-cover bg-center"
+      className="flex h-[calc(100vh-3.75rem)] w-screen items-center bg-hero bg-cover bg-center"
       role="img"
     >
       <div className="mx-8 flex flex-row justify-between sm:flex-col">

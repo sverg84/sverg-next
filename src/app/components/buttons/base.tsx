@@ -1,9 +1,9 @@
-import type { TablerIconsProps } from "@tabler/icons-react";
 import type { ButtonGradientDuoToneColors } from "flowbite-react";
+import type { IconType } from "react-icons";
 import { Button, Tooltip } from "flowbite-react";
 
 interface PropsCommon {
-  Icon: (props: TablerIconsProps) => JSX.Element;
+  Icon: IconType;
   href: string;
   label: string;
   renderLabel?: boolean;

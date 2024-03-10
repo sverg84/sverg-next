@@ -1,4 +1,4 @@
-import { IconMailFilled } from "@tabler/icons-react";
+import { IoMdMail } from "react-icons/io";
 import ExternalLinkButton from "./base";
 
 export default function EmailButton() {
@@ -6,7 +6,7 @@ export default function EmailButton() {
     <ExternalLinkButton
       gradient="cyanToBlue"
       href="mailto:sverg@gmail.com"
-      Icon={IconMailFilled}
+      Icon={IoMdMail}
       label="Send me an email"
     />
   );

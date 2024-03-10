@@ -1,4 +1,4 @@
-import { IconBrandGithub } from "@tabler/icons-react";
+import { IoLogoGithub } from "react-icons/io";
 import ExternalLinkButton from "./base";
 
 export default function GitHubButton() {
@@ -6,7 +6,7 @@ export default function GitHubButton() {
     <ExternalLinkButton
       color="success"
       href="https://github.com/sverg84"
-      Icon={IconBrandGithub}
+      Icon={IoLogoGithub}
       label="Visit my GitHub"
     />
   );

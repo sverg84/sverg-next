@@ -1,4 +1,4 @@
-import { IconFileDownload } from "@tabler/icons-react";
+import { IoMdDocument } from "react-icons/io";
 import ExternalLinkButton from "./base";
 
 export default function ResumeButton() {
@@ -6,7 +6,7 @@ export default function ResumeButton() {
     <ExternalLinkButton
       color="purple"
       href="https://dv8qyiytu2cuu.cloudfront.net/sverg_resume.pdf"
-      Icon={IconFileDownload}
+      Icon={IoMdDocument}
       label="Look at my resume"
     />
   );
