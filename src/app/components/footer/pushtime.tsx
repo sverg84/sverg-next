@@ -22,13 +22,26 @@ function relativeTimeFromElapsed(elapsed: number): string {
   return "";
 }
 
-async function genData(): Promise<{ ready: number }> {
-  const response = await fetch(`${process.env.URL}api/deployment`);
-  return await response.json();
+async function genData(): Promise<number> {
+  const response = await fetch(
+    "https://api.vercel.com/v6/deployments?projectId=prj_HzWmHLDRCGAhszqyOsLvWkq2pFGg&target=production&state=READY&limit=1",
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.VERCEL_API_TOKEN}`,
+      },
+      next: { revalidate: 10 },
+    },
+  );
+
+  const {
+    deployments: [{ ready }],
+  } = await response.json();
+
+  return ready;
 }
 
 export default async function LatestPushTime() {
-  const { ready } = await genData();
+  const ready = await genData();
   const pushTimeAsDate = new Date(ready);
   const timeSinceLastPush = pushTimeAsDate.getTime() - new Date().getTime();
   return (
@@ -42,3 +55,5 @@ export default async function LatestPushTime() {
     </div>
   );
 }
+
+export const runtime = "edge";
