@@ -13,7 +13,11 @@ const LABEL =
 
 export default function Hero() {
   return (
-    <div className="relative flex h-[calc(100vh-3.75rem)] items-center bg-hero bg-cover bg-center">
+    <div
+      className="relative flex h-[calc(100vh-3.75rem)] snap-start snap-always items-center
+        bg-hero bg-cover bg-center"
+      id="home"
+    >
       <Image
         alt={LABEL}
         className="z-[-1] object-cover"

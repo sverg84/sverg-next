@@ -22,17 +22,12 @@ interface PropsStandard extends PropsCommon {
 type Props = Readonly<PropsGradient | PropsStandard>;
 
 const className = [
-  ["xs", "text-xs px-2 py-1"],
-  ["sm", "sm:text-sm sm:px-3 sm:py-1.5"],
-  ["md", "md:text-sm md:px-4 md:py-2"],
-  ["lg", "lg:text-base lg:px-5 lg:py-2.5"],
-  ["xl", "xl:px-6 xl:py-3"],
-].reduce((acc, pair) => {
-  const [_size, name] = pair;
-
-  acc = `${acc} ${name}`;
-  return acc;
-}, "");
+  "text-xs px-2 py-1",
+  "sm:text-sm sm:px-3 sm:py-1.5",
+  "md:text-sm md:px-4 md:py-2",
+  "lg:text-base lg:px-5 lg:py-2.5",
+  "xl:px-6 xl:py-3",
+].reduce((acc, name) => `${acc} ${name}`, "");
 
 export default function ExternalLinkButton({
   color,

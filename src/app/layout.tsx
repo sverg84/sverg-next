@@ -20,7 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html
+      className="snap-y scroll-pt-[61px] scroll-smooth"
+      lang="en"
+      suppressHydrationWarning={true}
+    >
       <head>
         <ThemeModeScript />
       </head>

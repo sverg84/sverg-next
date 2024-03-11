@@ -4,11 +4,11 @@ import {
   Navbar,
   NavbarBrand,
   NavbarCollapse,
-  NavbarLink,
   NavbarToggle,
 } from "flowbite-react";
 import Image from "next/image";
 import MyName from "../consts/name";
+import NavLinks from "./nav/links";
 
 export default function Nav() {
   return (
@@ -16,7 +16,7 @@ export default function Nav() {
       fluid
       className="sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700"
     >
-      <NavbarBrand as={Link} href="https://flowbite-react.com">
+      <NavbarBrand as={Link} href="/">
         <Image
           src="https://www.flowbite-react.com/favicon.svg"
           className="mr-3 h-6 w-6 xs:h-9 xs:w-9"
@@ -36,18 +36,7 @@ export default function Nav() {
       </div>
       <NavbarToggle />
       <NavbarCollapse>
-        <NavbarLink href="#" active>
-          Home
-        </NavbarLink>
-        <NavbarLink as={Link} href="#">
-          About
-        </NavbarLink>
-        <NavbarLink as={Link} href="https://sverg84.github.io/">
-          v1 (GitHub Pages)
-        </NavbarLink>
-        <NavbarLink as={Link} href="https://sverg84.com">
-          v2 (Remix + AWS)
-        </NavbarLink>
+        <NavLinks />
       </NavbarCollapse>
     </Navbar>
   );
