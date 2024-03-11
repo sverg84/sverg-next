@@ -7,8 +7,8 @@ import {
   NavbarToggle,
 } from "flowbite-react";
 import Image from "next/image";
-import MyName from "../consts/name";
-import NavLinks from "./nav/links";
+import MyName from "../../consts/name";
+import NavLinks from "./links";
 
 export default function Nav() {
   return (
