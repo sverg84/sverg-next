@@ -45,7 +45,7 @@ export default async function LatestPushTime() {
   const pushTimeAsDate = new Date(ready);
   const timeSinceLastPush = pushTimeAsDate.getTime() - new Date().getTime();
   return (
-    <div className="flex gap-x-2 text-sm">
+    <div className="flex gap-x-2 text-xs xs:text-sm">
       Latest update:
       <Tooltip content={pushTimeAsDate.toLocaleString()}>
         <time className="underline decoration-dotted">

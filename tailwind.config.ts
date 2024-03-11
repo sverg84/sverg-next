@@ -36,6 +36,9 @@ const config: Config = {
           },
         },
       },
+      screens: {
+        xs: "480px",
+      },
     },
   },
   plugins: [flowbite],

@@ -64,8 +64,8 @@ export default async function WeatherWidget() {
 
   return (
     <figure
-      className={`fixed bottom-20 right-4 flex flex-col items-center rounded-2xl p-2 text-white
-      ${gradient} animate-fade-in-right motion-reduce:animate-none`}
+      className={`fixed bottom-20 right-4 z-10 flex flex-col items-center rounded-2xl p-2
+      text-white ${gradient} animate-fade-in-right motion-reduce:animate-none`}
     >
       <h2 className="font-bold">{weather.city}</h2>
       <Tooltip content={weather.description} placement="left">

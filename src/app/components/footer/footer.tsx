@@ -81,32 +81,33 @@ export default function AppFooter() {
   return (
     <Footer className="rounded-none" container>
       <div className="w-full">
-        <div className="grid w-full justify-between sm:flex sm:justify-around md:flex md:grid-cols-1">
+        <div className="grid w-full gap-y-8 sm:flex sm:justify-around sm:gap-y-0 md:flex md:grid-cols-1">
           <div className="grid grid-cols-2 items-center justify-items-center gap-8 text-sm">
             {tech.map((item) => (
               <TechLink key={item.label} {...item} />
             ))}
           </div>
-          <div>
-            <div>
-              <FooterTitle title="Older versions" />
-              <FooterLinkGroup col>
-                <FooterLink href="https://sverg84.github.io/">
-                  v1 (GitHub Pages)
-                </FooterLink>
-                <FooterLink href="https://sverg84.com">
-                  v2 (Remix + AWS)
-                </FooterLink>
-              </FooterLinkGroup>
-            </div>
+          <div className="justify-self-center text-center sm:text-start">
+            <FooterTitle title="Older versions" />
+            <FooterLinkGroup col>
+              <FooterLink className="mr-0" href="https://sverg84.github.io/">
+                v1 (GitHub Pages)
+              </FooterLink>
+              <FooterLink href="https://sverg84.com">
+                v2 (Remix + AWS)
+              </FooterLink>
+            </FooterLinkGroup>
           </div>
         </div>
         <FooterDivider />
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
+        <div
+          className="flex w-full flex-col items-center gap-y-4 xs:flex-row xs:justify-between
+            xs:gap-y-0"
+        >
           <Suspense fallback={<div />}>
             <LatestPushTime />
           </Suspense>
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+          <div className="flex space-x-6">
             {icons.map((item) => (
               <IconLink key={item.label} {...item} />
             ))}

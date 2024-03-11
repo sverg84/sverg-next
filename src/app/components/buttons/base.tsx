@@ -21,6 +21,19 @@ interface PropsStandard extends PropsCommon {
 
 type Props = Readonly<PropsGradient | PropsStandard>;
 
+const className = [
+  ["xs", "text-xs px-2 py-1"],
+  ["sm", "sm:text-sm sm:px-3 sm:py-1.5"],
+  ["md", "md:text-sm md:px-4 md:py-2"],
+  ["lg", "lg:text-base lg:px-5 lg:py-2.5"],
+  ["xl", "xl:px-6 xl:py-3"],
+].reduce((acc, pair) => {
+  const [_size, name] = pair;
+
+  acc = `${acc} ${name}`;
+  return acc;
+}, "");
+
 export default function ExternalLinkButton({
   color,
   gradient,
@@ -35,14 +48,14 @@ export default function ExternalLinkButton({
     <Tooltip content={label} placement="bottom">
       <Button
         aria-label={label}
-        className="inline-flex items-center gap-x-4 px-3"
+        className={className}
         href={href}
         pill={true}
-        size="sm"
+        size="xs"
         target="_blank"
         {...colorProps}
       >
-        <Icon className="-my-1.5" size={36} />
+        <Icon className="-my-1.5 h-6 w-6 xs:h-9 xs:w-9" />
       </Button>
     </Tooltip>
   );
