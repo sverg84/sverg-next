@@ -8,8 +8,7 @@ const items: Item[] = [
     body: (
       <>
         Assistant at the university&apos;s Transportation Research Institute as
-        part of the Undergraduate Research Opportunity Program (UROP).
-        Participated in
+        part of the Undergraduate Research Opportunity Program. Conducted an
         <Tooltip
           content={
             "of or relating to the scientific study of the " +
@@ -20,6 +19,8 @@ const items: Item[] = [
           anthropometric
         </Tooltip>
         &nbsp;study for Defence Research &amp; Development Canada (DRDC).
+        Analyzed/visualized the change in posture for 3-D scans of military
+        personnel with respect to varying levels of uniform encumbrance.
       </>
     ),
     id: "umich-urop",
@@ -37,7 +38,7 @@ const items: Item[] = [
     title: "Software Engineer Intern at Facebook",
   },
   {
-    body: `Full-stack product software engineer (PHP/Hack and JS/React) for the\
+    body: `Full-stack Web product software engineer for the\
           Org Effectiveness team within the Enterprise Engineering division.\
           Released multiple high-priority stakeholder feature requests\
           pertaining to HR-sensitive employee data. Leader of team app\

@@ -44,8 +44,13 @@ export default function TimelineBase({
             <Point direction={direction} iconId={id} />
             <TimelineContent theme={contentTheme}>
               {time && <TimelineTime>{time}</TimelineTime>}
-              <TimelineTitle>{title}</TimelineTitle>
-              <TimelineBody className="flex flex-col gap-y-2">
+              <TimelineTitle className={`text-${direction}`}>
+                {title}
+              </TimelineTitle>
+              <TimelineBody
+                className={`flex flex-col gap-y-2 items-${direction === "left" ? "start" : "end"}
+                text-${direction}`}
+              >
                 <span>{body}</span>
                 <div className="flex gap-x-4">
                   {skills.map((skill) => (
