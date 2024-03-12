@@ -9,8 +9,7 @@ const HOME = "#home";
 const links = [
   { href: HOME, label: "Home" },
   { href: "#about", label: "About" },
-  { href: "https://sverg84.github.io", label: "v1 (GitHub Pages)" },
-  { href: "https://sverg84.com", label: "v2 (Remix + AWS)" },
+  { href: "#experience", label: "Experience" },
 ];
 
 export default function NavLinks() {
@@ -18,18 +17,17 @@ export default function NavLinks() {
   const [activeHref, setActiveHref] = useState(HOME);
 
   const onClick = (href: string) => {
-    if (href[0] !== "#") {
-      return;
-    }
     setActiveHref(href);
   };
 
   useEffect(() => {
-    const hash = window.location.hash.length > 0 ? window.location.hash : HOME;
+    const hash = window.location.hash;
 
-    document.querySelector(hash)?.scrollIntoView(true);
+    if (hash.length > 0) {
+      document.querySelector(hash)?.scrollIntoView(true);
+      setActiveHref(hash);
+    }
 
-    setActiveHref(hash);
     setIsClient(true);
   }, []);
 

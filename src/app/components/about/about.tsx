@@ -11,10 +11,11 @@ function Language({ language }: { language: string }) {
 
 export default function AboutMeBody() {
   return (
-    <section className="grid snap-start snap-always items-center xs:grid-cols-2">
+    <section className="body-section grid justify-items-center lg:grid-cols-2 lg:gap-y-0">
+      <h2 className="text-xl font-semibold lg:hidden">About</h2>
       <Image
         alt={`${MyName} in the tulip field`}
-        className="rounded-full lg:justify-self-center"
+        className="rounded-full"
         priority={true}
         src={sverg}
       />

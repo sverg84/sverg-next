@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html,
+  body {
+    scroll-behavior: smooth;
+    scroll-padding-top: 61px;
+    scroll-snap-type: y proximity;
+  }
+}
+
+@layer components {
+  .body-section {
+    align-items: center;
+    row-gap: theme("spacing.4");
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  .section-header {
+    font-size: theme("fontSize.xl");
+    font-weight: theme("fontWeight.semibold");
+
+    @media screen(lg) {
+      display: none;
+    }
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
