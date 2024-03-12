@@ -18,38 +18,37 @@ import Point from "./point";
 
 type Props = Readonly<{
   contentTheme?: TimelineContentProps["theme"];
-  direction: "left" | "right";
   id: string;
   items: ReadonlyArray<Item>;
   itemTheme?: TimelineItemProps["theme"];
   label: string;
+  rightAlign?: boolean;
   timelineTheme?: TimelineProps["theme"];
 }>;
 
 export default function TimelineBase({
   contentTheme,
-  direction,
   id,
   items,
   itemTheme,
   label,
+  rightAlign = false,
   timelineTheme,
 }: Props) {
+  const textAlign = rightAlign ? "text-right" : "text-left";
+
   return (
     <section className="body-section flex flex-col" id={id}>
       <h2 className="section-header">{label}</h2>
       <Timeline theme={timelineTheme}>
         {items.map(({ body, id, skills, time, title }) => (
           <TimelineItem key={id} theme={itemTheme}>
-            <Point direction={direction} iconId={id} />
+            <Point rightAlign={rightAlign} iconId={id} />
             <TimelineContent theme={contentTheme}>
               {time && <TimelineTime>{time}</TimelineTime>}
-              <TimelineTitle className={`text-${direction}`}>
-                {title}
-              </TimelineTitle>
+              <TimelineTitle className={textAlign}>{title}</TimelineTitle>
               <TimelineBody
-                className={`flex flex-col gap-y-2 items-${direction === "left" ? "start" : "end"}
-                text-${direction}`}
+                className={`flex flex-col gap-y-2 ${textAlign} ${rightAlign ? "items-end" : "items-start"}`}
               >
                 <span>{body}</span>
                 <div className="flex gap-x-4">

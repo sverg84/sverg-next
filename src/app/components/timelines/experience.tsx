@@ -51,12 +51,5 @@ const items: Item[] = [
 ];
 
 export default function ExperienceTimeline() {
-  return (
-    <TimelineBase
-      direction="left"
-      id="experience"
-      items={items}
-      label="Experience"
-    />
-  );
+  return <TimelineBase id="experience" items={items} label="Experience" />;
 }

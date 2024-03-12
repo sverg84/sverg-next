@@ -46,11 +46,11 @@ export default function Projects() {
   return (
     <TimelineBase
       contentTheme={{ root: { base: "mt-3 sm:pl-8" } }}
-      direction="right"
       id="projects"
       items={items}
       itemTheme={{ root: { vertical: "mb-10 mr-6" } }}
       label="Projects"
+      rightAlign={true}
       timelineTheme={{
         root: {
           direction: {
