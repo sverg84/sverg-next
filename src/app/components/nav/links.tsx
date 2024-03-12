@@ -10,15 +10,12 @@ const links = [
   { href: HOME, label: "Home" },
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
 ];
 
 export default function NavLinks() {
   const [isClient, setIsClient] = useState(false);
   const [activeHref, setActiveHref] = useState(HOME);
-
-  const onClick = (href: string) => {
-    setActiveHref(href);
-  };
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -40,7 +37,7 @@ export default function NavLinks() {
           className="scroll-smooth"
           href={href}
           key={label}
-          onClick={() => onClick(href)}
+          onClick={() => setActiveHref(href)}
         >
           {label}
         </NavbarLink>

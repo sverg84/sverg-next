@@ -6,7 +6,7 @@
   html,
   body {
     scroll-behavior: smooth;
-    scroll-padding-top: 61px;
+    scroll-padding-top: theme("spacing.20");
     scroll-snap-type: y proximity;
   }
 }

@@ -1,20 +1,7 @@
-import {
-  Timeline,
-  TimelineBody,
-  TimelineContent,
-  TimelineItem,
-  TimelineTime,
-  TimelineTitle,
-  Tooltip,
-} from "flowbite-react";
-import Point from "./point";
+import type { Item } from "@/app/types/item";
 
-type Item = Readonly<{
-  body: React.ReactNode;
-  id: string;
-  time: string;
-  title: string;
-}>;
+import { Tooltip } from "flowbite-react";
+import TimelineBase from "./base";
 
 const items: Item[] = [
   {
@@ -36,6 +23,7 @@ const items: Item[] = [
       </>
     ),
     id: "umich-urop",
+    skills: ["MATLAB", "Wolfram Mathematica"],
     time: "2016-2017",
     title: "Research Assistant at the University of Michigan",
   },
@@ -44,6 +32,7 @@ const items: Item[] = [
           division. Created monitoring tool for team oncall to measure network\
           packet failures with interactive web page.`,
     id: "fb-intern",
+    skills: ["C++", "Python", "Thrift", "MySQL"],
     time: "Summer 2019",
     title: "Software Engineer Intern at Facebook",
   },
@@ -54,6 +43,7 @@ const items: Item[] = [
           pertaining to HR-sensitive employee data. Leader of team app\
           performance optimization opportunities.`,
     id: "meta-swe",
+    skills: ["React", "Hack", "GraphQL", "Relay", "MySQL", "Jest"],
     time: "2020-2023",
     title: "Software Engineer at Meta Platforms, Inc.",
   },
@@ -61,22 +51,11 @@ const items: Item[] = [
 
 export default function ExperienceTimeline() {
   return (
-    <section className="body-section flex flex-col" id="experience">
-      <h2 className="section-header">Experience</h2>
-      <Timeline>
-        {items.map(({ body, id, time, title }) => {
-          return (
-            <TimelineItem key={id}>
-              <Point iconId={id} />
-              <TimelineContent>
-                <TimelineTime>{time}</TimelineTime>
-                <TimelineTitle>{title}</TimelineTitle>
-                <TimelineBody>{body}</TimelineBody>
-              </TimelineContent>
-            </TimelineItem>
-          );
-        })}
-      </Timeline>
-    </section>
+    <TimelineBase
+      direction="left"
+      id="experience"
+      items={items}
+      label="Experience"
+    />
   );
 }

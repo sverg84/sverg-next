@@ -11,7 +11,10 @@ function Language({ language }: { language: string }) {
 
 export default function AboutMeBody() {
   return (
-    <section className="body-section grid justify-items-center lg:grid-cols-2 lg:gap-y-0">
+    <section
+      className="body-section grid justify-items-center lg:grid-cols-2 lg:gap-y-0"
+      id="about"
+    >
       <h2 className="text-xl font-semibold lg:hidden">About</h2>
       <Image
         alt={`${MyName} in the tulip field`}
@@ -25,20 +28,20 @@ export default function AboutMeBody() {
           took an introduction course to {<Language language="Java" />} on a
           whim, and I loved learning as much as I could since then! Throughout
           my time at university, I applied myself to a substantial amount of
-          coursework in {<Language language="C++" />} and{" "}
-          {<Language language="Python" />} with a splash of{" "}
+          coursework in {<Language language="C++" />} and&nbsp;
+          {<Language language="Python" />} with a splash of&nbsp;
           {<Language language="JavaScript" />}, {<Language language="OCaml" />},
           and {<Language language="C#" />}.
         </p>
         <p>
           All of my full-time experience (as of Summer 2023) stems from my time
           at Meta where I challenged myself further in exploring web
-          programming, learning {<Language language="PHP" />} and{" "}
+          programming, learning {<Language language="PHP" />} and&nbsp;
           {<Language language="React" />} for the first time in a rigorous,
           fast-paced environment.
         </p>
         <p>
-          Since parting with Meta, I have been self-teaching{" "}
+          Since parting with Meta, I have been self-teaching&nbsp;
           {<Language language="TypeScript" />} in order to keep my UI-building
           skills fresh, replete with {<Language language="SCSS" />} modules.
         </p>
