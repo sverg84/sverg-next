@@ -20,7 +20,7 @@
     font-weight: theme("fontWeight.semibold");
 
     @media screen(lg) {
-      display: none;
+      font-size: theme("fontSize.2xl");
     }
   }
 }

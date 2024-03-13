@@ -39,7 +39,11 @@ export default function TimelineBase({
 
   return (
     <section className="body-section flex flex-col" id={id}>
-      <h2 className="section-header">{label}</h2>
+      <h2
+        className={`section-header ${rightAlign ? "lg:self-end" : "lg:self-start"}`}
+      >
+        {label}
+      </h2>
       <Timeline className="max-w-full" theme={timelineTheme}>
         {items.map(({ body, id, skills, time, title }) => (
           <TimelineItem className="mb-5 md:mb-10" key={id} theme={itemTheme}>

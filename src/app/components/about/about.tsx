@@ -12,17 +12,19 @@ function Language({ language }: { language: string }) {
 export default function AboutMeBody() {
   return (
     <section
-      className="body-section grid justify-items-center lg:grid-cols-2 lg:gap-y-0"
+      className="body-section grid justify-items-center lg:grid-cols-2"
       id="about"
     >
-      <h2 className="text-xl font-semibold lg:hidden">About</h2>
+      <h2 className="section-header lg:col-start-2 lg:justify-self-center">
+        About
+      </h2>
       <Image
         alt={`${MyName} in the tulip field`}
         className="rounded-full"
         priority={true}
         src={sverg}
       />
-      <div className="flex flex-col gap-y-4">
+      <div className="flex flex-col gap-y-4 text-center lg:text-right">
         <p>
           I started learning to code during my senior year of high school when I
           took an introduction course to {<Language language="Java" />} on a
