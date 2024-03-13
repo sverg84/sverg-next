@@ -3,6 +3,7 @@ import {
   Footer,
   FooterDivider,
   FooterIcon,
+  FooterLink,
   FooterLinkGroup,
   FooterTitle,
 } from "flowbite-react";
@@ -99,9 +100,11 @@ export default function AppFooter() {
             <FooterTitle title="Older versions" />
             <FooterLinkGroup col>
               {versions.map(([href, label]) => (
-                <Link className={`mr-0 ${TRANSITION}`} href={href} key={label}>
-                  {label}
-                </Link>
+                <li key={label}>
+                  <Link className={TRANSITION} href={href}>
+                    {label}
+                  </Link>
+                </li>
               ))}
             </FooterLinkGroup>
           </div>
