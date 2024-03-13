@@ -19,10 +19,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         hero: "linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%)",
+        "utapau-dark":
+          "linear-gradient(to right, #a6ecff, #a6ecff 50%, royalblue 50%)",
+        "utapau-light":
+          "linear-gradient(to right, #31ccff, #31ccff 50%, royalblue 50%)",
       },
       colors: {
         "night-sky": "#283e51",
         "night-sky-2": "#0a2342",
+      },
+      cursor: {
+        grievous:
+          "url(https://dv8qyiytu2cuu.cloudfront.net/grievous_cursor.png), auto",
+        "obi-wan":
+          "url(https://dv8qyiytu2cuu.cloudfront.net/obi_saber.png), auto",
       },
       keyframes: {
         "fade-in-right": {

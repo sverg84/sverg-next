@@ -23,6 +23,21 @@
       font-size: theme("fontSize.2xl");
     }
   }
+  .utapau {
+    display: inline-block;
+    cursor: theme("cursor.obi-wan");
+    overflow: hidden;
+    background-clip: text;
+    background-size: 200%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    -webkit-text-fill-color: transparent;
+    vertical-align: top;
+  }
+
+  .utapau:hover {
+    background-position: 0 100%;
+  }
 }
 
 @layer utilities {

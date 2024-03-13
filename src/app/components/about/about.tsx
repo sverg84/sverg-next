@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import sverg from "../../../../public/sverg.webp";
 import MyName from "@/app/consts/name";
+import Utapau from "./utapau";
 
 function Language({ language }: { language: string }) {
   return (
@@ -25,6 +26,7 @@ export default function AboutMeBody() {
         src={sverg}
       />
       <div className="flex flex-col gap-y-4 text-center lg:text-right">
+        <Utapau />
         <p>
           I started learning to code during my senior year of high school when I
           took an introduction course to {<Language language="Java" />} on a
