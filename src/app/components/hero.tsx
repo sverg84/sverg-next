@@ -13,7 +13,7 @@ const LABEL =
 
 export default function Hero() {
   return (
-    <div
+    <section
       className="relative flex h-[calc(100vh-3.75rem)] items-center bg-hero bg-cover bg-center"
       id="home"
     >
@@ -62,6 +62,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

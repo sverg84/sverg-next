@@ -2,7 +2,7 @@
 
 import { NavbarLink } from "flowbite-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const HOME = "#home";
 
@@ -17,6 +17,8 @@ export default function NavLinks() {
   const [isClient, setIsClient] = useState(false);
   const [activeHref, setActiveHref] = useState(HOME);
 
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
   useEffect(() => {
     const hash = window.location.hash;
 
@@ -26,6 +28,23 @@ export default function NavLinks() {
     }
 
     setIsClient(true);
+
+    observerRef.current = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setActiveHref(`#${entry.target.id}`);
+        }
+      },
+      { threshold: 0.8, root: document },
+    );
+
+    Array.from(document.querySelectorAll("section")).forEach((section) => {
+      observerRef.current?.observe(section);
+    });
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
   }, []);
 
   return (
@@ -37,7 +56,6 @@ export default function NavLinks() {
           className="scroll-smooth"
           href={href}
           key={label}
-          onClick={() => setActiveHref(href)}
         >
           {label}
         </NavbarLink>
