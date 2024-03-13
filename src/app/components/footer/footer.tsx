@@ -3,7 +3,6 @@ import {
   Footer,
   FooterDivider,
   FooterIcon,
-  FooterLink,
   FooterLinkGroup,
   FooterTitle,
 } from "flowbite-react";
@@ -19,6 +18,9 @@ type TechLinkProps = Readonly<{
   label: string;
   leadingText: string;
 }>;
+
+const TRANSITION =
+  "transition motion-reduce:transition-none ease-linear hover:text-cyan-700 hover:dark:text-emerald-300";
 
 const icons = [
   {
@@ -50,10 +52,16 @@ const tech = [
   { href: "https://vercel.com/", label: "Vercel", leadingText: "Deployed to" },
 ];
 
+const versions = [
+  ["https://sverg84.github.io", "v1 (GitHub Pages)"],
+  ["https://sverg84.com", "v2 (Remix + AWS)"],
+];
+
 function IconLink({ href, icon, label }: IconLinkProps) {
   return (
     <FooterIcon
       aria-label={`${label} (opens in a new tab)`}
+      className={TRANSITION}
       href={href}
       icon={icon}
       target="_blank"
@@ -67,7 +75,7 @@ function TechLink({ href, label, leadingText }: TechLinkProps) {
       {leadingText}&nbsp;
       <Link
         aria-label={label}
-        className="font-semibold text-cyan-700 dark:text-emerald-300"
+        className={`font-semibold ${TRANSITION}`}
         href={href}
         target="_blank"
       >
@@ -90,12 +98,11 @@ export default function AppFooter() {
           <div className="justify-self-center text-center sm:text-start">
             <FooterTitle title="Older versions" />
             <FooterLinkGroup col>
-              <FooterLink className="mr-0" href="https://sverg84.github.io/">
-                v1 (GitHub Pages)
-              </FooterLink>
-              <FooterLink href="https://sverg84.com">
-                v2 (Remix + AWS)
-              </FooterLink>
+              {versions.map(([href, label]) => (
+                <Link className={`mr-0 ${TRANSITION}`} href={href} key={label}>
+                  {label}
+                </Link>
+              ))}
             </FooterLinkGroup>
           </div>
         </div>
