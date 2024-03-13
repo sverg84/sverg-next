@@ -3,6 +3,8 @@ import Image from "next/image";
 import sverg from "../../../../public/sverg.webp";
 import MyName from "@/app/consts/name";
 import Utapau from "./utapau";
+import Link from "next/link";
+import { Tooltip } from "flowbite-react";
 
 function Language({ language }: { language: string }) {
   return (
@@ -28,26 +30,36 @@ export default function AboutMeBody() {
       <div className="flex flex-col gap-y-4 text-center lg:text-right">
         <Utapau />
         <p>
-          I started learning to code during my senior year of high school when I
-          took an introduction course to {<Language language="Java" />} on a
-          whim, and I loved learning as much as I could since then! Throughout
-          my time at university, I applied myself to a substantial amount of
-          coursework in {<Language language="C++" />} and&nbsp;
-          {<Language language="Python" />} with a splash of&nbsp;
-          {<Language language="JavaScript" />}, {<Language language="OCaml" />},
-          and {<Language language="C#" />}.
+          My first time programming was when my high school introduced me to
+          Scratch during an annual{" "}
+          <Link
+            className="font-bold transition ease-linear hover:text-cyan-700
+              motion-reduce:transition-none hover:dark:text-emerald-300"
+            href="https://hourofcode.com/us"
+            target="_blank"
+          >
+            Hour of Code
+          </Link>{" "}
+          back in 2012. Not long after, I took a course in Java and the rest was
+          history! Since then, I&apos;ve made a horde-style brawler game in
+          Unity for my capstone, graduated with a Bachelor&apos;s of Science in
+          Computer Science, and worked for three (3) years as a Web software
+          engineer at Meta.
         </p>
         <p>
-          All of my full-time experience (as of Summer 2023) stems from my time
-          at Meta where I challenged myself further in exploring web
-          programming, learning {<Language language="PHP" />} and&nbsp;
-          {<Language language="React" />} for the first time in a rigorous,
-          fast-paced environment.
+          I started as a backend programmer, learning Java, C++, Python, and C#
+          in school. Entering the workforce, I pivoted to Web development, and I
+          love fiddling with web technologies and transforming them into user
+          experiences.
         </p>
         <p>
-          Since parting with Meta, I have been self-teaching&nbsp;
-          {<Language language="TypeScript" />} in order to keep my UI-building
-          skills fresh, replete with {<Language language="SCSS" />} modules.
+          After learning React and GraphQL at Meta, I self-taught TypeScript,
+          Amazon Web Services (AWS), server-side rendering and many different
+          styling methods.
+        </p>
+        <p>
+          When I&apos;m not coding, however, I love kayaking, singing karaoke,
+          and playing video games!
         </p>
       </div>
     </section>
