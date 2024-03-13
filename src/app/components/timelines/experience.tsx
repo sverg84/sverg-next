@@ -8,22 +8,14 @@ const items: Item[] = [
     body: (
       <>
         Assistant at the university&apos;s Transportation Research Institute as
-        part of the Undergraduate Research Opportunity Program. Conducted an{" "}
-        <Tooltip
-          className="text-center"
-          content={
-            "of or relating to the scientific study of the " +
-            "measurements and proportions of the human body"
-          }
-          theme={{ target: "inline-block" }}
-        >
-          <span className="underline decoration-dotted">anthropometric</span>
-        </Tooltip>{" "}
-        study for Defence Research &amp; Development Canada (DRDC).
-        Analyzed/visualized the change in posture for 3-D scans of military
-        personnel with respect to varying levels of uniform encumbrance.
+        part of the Undergraduate Research Opportunity Program. Conducted an
+        anthropometric study for Defence Research &amp; Development Canada
+        (DRDC). Analyzed/visualized the change in posture for 3-D scans of
+        military personnel with respect to varying levels of uniform
+        encumbrance.
       </>
     ),
+    href: "https://umtri.umich.edu",
     id: "umich-urop",
     skills: ["MATLAB", "Wolfram Mathematica"],
     time: "2016-2017",
@@ -33,6 +25,7 @@ const items: Item[] = [
     body: `Intern for the Traffic Analytics team within the Infrastructure\
           division. Created monitoring tool for team oncall to measure network\
           packet failures with interactive web page.`,
+    href: "https://about.meta.com/",
     id: "fb-intern",
     skills: ["C++", "Python", "Thrift", "MySQL"],
     time: "Summer 2019",
@@ -44,6 +37,7 @@ const items: Item[] = [
           Released multiple high-priority stakeholder feature requests\
           pertaining to HR-sensitive employee data. Leader of team app\
           performance optimization opportunities.`,
+    href: "https://about.meta.com/",
     id: "meta-swe",
     skills: ["React", "Hack", "GraphQL", "Relay", "MySQL", "Jest"],
     time: "2020-2023",
