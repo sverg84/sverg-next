@@ -8,7 +8,8 @@ const items: Item[] = [
     body: (
       <>
         Assistant at the university&apos;s Transportation Research Institute as
-        part of the Undergraduate Research Opportunity Program. Conducted an
+        part of the Undergraduate Research Opportunity Program. Conducted
+        an&nbsp;
         <Tooltip
           content={
             "of or relating to the scientific study of the " +

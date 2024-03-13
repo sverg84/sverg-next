@@ -48,7 +48,7 @@ export default function Projects() {
       contentTheme={{ root: { base: "mt-3 sm:pl-8" } }}
       id="projects"
       items={items}
-      itemTheme={{ root: { vertical: "mb-10 mr-6" } }}
+      itemTheme={{ root: { vertical: "mb-10 mr-3 md:mr-6" } }}
       label="Projects"
       rightAlign={true}
       timelineTheme={{
