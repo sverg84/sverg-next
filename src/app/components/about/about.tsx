@@ -54,7 +54,7 @@ export default function AboutMeBody() {
         </p>
         <p>
           After learning React and GraphQL at Meta, I self-taught TypeScript,
-          Amazon Web Services (AWS), server-side rendering and many different
+          Amazon Web Services (AWS), server-side rendering, and many different
           styling methods.
         </p>
         <p>
