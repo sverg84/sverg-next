@@ -4,16 +4,12 @@ import TimelineBase from "./base";
 
 const items: Item[] = [
   {
-    body: (
-      <>
-        Assistant at the university&apos;s Transportation Research Institute as
-        part of the Undergraduate Research Opportunity Program. Conducted an
-        anthropometric study for Defence Research &amp; Development Canada
-        (DRDC). Analyzed/visualized the change in posture for 3-D scans of
-        military personnel with respect to varying levels of uniform
-        encumbrance.
-      </>
-    ),
+    body: "Assistant at the university&apos;s Transportation Research Institute as\
+        part of the Undergraduate Research Opportunity Program. Conducted an\
+        anthropometric study for Defence Research &amp; Development Canada\
+        (DRDC). Analyzed/visualized the change in posture for 3-D scans of\
+        military personnel with respect to varying levels of uniform\
+        encumbrance.",
     href: "https://umtri.umich.edu",
     id: "umich-urop",
     skills: ["MATLAB", "Wolfram Mathematica"],
