@@ -1,6 +1,5 @@
 import type { Item } from "@/app/types/item";
 
-import { Tooltip } from "flowbite-react";
 import TimelineBase from "./base";
 
 const items: Item[] = [

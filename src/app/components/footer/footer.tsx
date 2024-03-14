@@ -3,7 +3,6 @@ import {
   Footer,
   FooterDivider,
   FooterIcon,
-  FooterLink,
   FooterLinkGroup,
   FooterTitle,
 } from "flowbite-react";

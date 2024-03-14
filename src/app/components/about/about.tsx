@@ -4,7 +4,6 @@ import sverg from "../../../../public/sverg.webp";
 import MyName from "@/app/consts/name";
 import Utapau from "./utapau";
 import Link from "next/link";
-import { Tooltip } from "flowbite-react";
 
 function Language({ language }: { language: string }) {
   return (
