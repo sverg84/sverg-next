@@ -12,6 +12,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Stephen Vergara",
   description: "Stephen's porfolio, powered by Next.js",
+  metadataBase: new URL(
+    process.env.NODE_ENV === "production"
+      ? "https://stephenvergara.com"
+      : "http://localhost:3000",
+  ),
 };
 
 export default function RootLayout({
