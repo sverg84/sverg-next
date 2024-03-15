@@ -49,19 +49,18 @@ export default function Hero() {
             <LinkedInButton />
             <EmailButton />
           </div>
-          <div className="self-center">
-            <Tooltip
-              className="w-60 text-center"
-              content={LABEL}
-              placement="bottom"
-            >
-              <p className="xs:text-md text-sm text-white underline decoration-dotted">
-                Picture taken by {MyName}
-              </p>
-            </Tooltip>
-          </div>
         </div>
       </div>
+      <Tooltip
+        className="w-60 text-center"
+        content={LABEL}
+        placement="top"
+        theme={{ target: "absolute bottom-8 right-8" }}
+      >
+        <p className="xs:text-md text-sm text-white underline decoration-dotted">
+          Picture taken by {MyName}
+        </p>
+      </Tooltip>
     </section>
   );
 }
