@@ -1,9 +1,4 @@
 import type { Item } from "@/app/types/item";
-import type {
-  TimelineContentProps,
-  TimelineItemProps,
-  TimelineProps,
-} from "flowbite-react";
 
 import {
   Badge,

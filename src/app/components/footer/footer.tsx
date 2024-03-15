@@ -12,7 +12,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import LatestPushTime from "./pushtime";
 
-type IconLinkProps = Readonly<{ href: string; icon: IconType; label: string }>;
+type IconLinkProps = Readonly<{ href: string; Icon: IconType; label: string }>;
 type TechLinkProps = Readonly<{
   href: string;
   label: string;
@@ -22,20 +22,20 @@ type TechLinkProps = Readonly<{
 const icons = [
   {
     href: "https://letterboxd.com/sverg/",
-    icon: SiLetterboxd,
+    Icon: SiLetterboxd,
     label: "Letterboxd",
   },
   {
     href: "https://www.facebook.com/stephen.vergara.0",
-    icon: BsFacebook,
+    Icon: BsFacebook,
     label: "Facebook",
   },
   {
     href: "https://www.linkedin.com/in/stephen-vergara-2bab8614b/",
-    icon: BsLinkedin,
+    Icon: BsLinkedin,
     label: "LinkedIn",
   },
-  { href: "https://github.com/sverg84", icon: BsGithub, label: "GitHub" },
+  { href: "https://github.com/sverg84", Icon: BsGithub, label: "GitHub" },
 ];
 
 const tech = [
@@ -54,15 +54,16 @@ const versions = [
   ["https://sverg84.com", "v2 (Remix + AWS)"],
 ];
 
-function IconLink({ href, icon, label }: IconLinkProps) {
+function IconLink({ href, Icon, label }: IconLinkProps) {
   return (
-    <FooterIcon
+    <a
       aria-label={`${label} (opens in a new tab)`}
-      className="link"
+      className="link text-gray-500"
       href={href}
-      icon={icon}
       target="_blank"
-    />
+    >
+      <Icon size={20} />
+    </a>
   );
 }
 
