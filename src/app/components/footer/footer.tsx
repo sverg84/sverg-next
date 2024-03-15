@@ -68,11 +68,11 @@ function IconLink({ href, icon, label }: IconLinkProps) {
 
 function TechLink({ href, label, leadingText }: TechLinkProps) {
   return (
-    <span>
+    <span className="text-center">
       {leadingText}&nbsp;
       <Link
         aria-label={label}
-        className="link font-semibold"
+        className="link block font-semibold 2xs:inline-block"
         href={href}
         target="_blank"
       >

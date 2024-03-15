@@ -26,7 +26,10 @@ type Props = Readonly<{
 
 export default function TimelineBase({ id, items, label }: Props) {
   return (
-    <section className="body-section flex flex-col" id={id}>
+    <section
+      className="body-section flex flex-col 2xl:w-full 2xl:items-start"
+      id={id}
+    >
       <h2 className="section-header lg:self-start">{label}</h2>
       <Timeline className="group/timeline max-w-full">
         {items.map(({ body, href, id, skills, time, title }) => (
@@ -69,7 +72,7 @@ export default function TimelineBase({ id, items, label }: Props) {
               </TimelineTitle>
               <TimelineBody className="flex flex-col gap-y-2 text-xs md:text-sm lg:text-base">
                 <span>{body}</span>
-                <div className="flex gap-x-4">
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {skills.map((skill) => (
                     <Badge
                       className="rounded-lg px-1 py-[0.0625rem] text-[0.6rem] text-cyan-700
