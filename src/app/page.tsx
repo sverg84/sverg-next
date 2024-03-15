@@ -1,5 +1,3 @@
-import WeatherWidget from "./components/weather";
-import { Suspense } from "react";
 import Hero from "./components/hero";
 import AboutMeBody from "./components/about/about";
 import ExperienceTimeline from "./components/timelines/experience";
@@ -14,9 +12,6 @@ export default function Home() {
         <ExperienceTimeline />
         <Projects />
       </main>
-      <Suspense>
-        <WeatherWidget />
-      </Suspense>
     </>
   );
 }
