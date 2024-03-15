@@ -32,8 +32,7 @@ export default function AboutMeBody() {
           My first time programming was when my high school introduced me to
           Scratch during an annual{" "}
           <Link
-            className="font-bold transition ease-linear hover:text-cyan-700
-              motion-reduce:transition-none hover:dark:text-emerald-300"
+            className="link font-bold"
             href="https://hourofcode.com/us"
             target="_blank"
           >

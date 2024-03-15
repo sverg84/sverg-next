@@ -19,9 +19,6 @@ type TechLinkProps = Readonly<{
   leadingText: string;
 }>;
 
-const TRANSITION =
-  "transition motion-reduce:transition-none ease-linear hover:text-cyan-700 hover:dark:text-emerald-300";
-
 const icons = [
   {
     href: "https://letterboxd.com/sverg/",
@@ -61,7 +58,7 @@ function IconLink({ href, icon, label }: IconLinkProps) {
   return (
     <FooterIcon
       aria-label={`${label} (opens in a new tab)`}
-      className={TRANSITION}
+      className="link"
       href={href}
       icon={icon}
       target="_blank"
@@ -75,7 +72,7 @@ function TechLink({ href, label, leadingText }: TechLinkProps) {
       {leadingText}&nbsp;
       <Link
         aria-label={label}
-        className={`font-semibold ${TRANSITION}`}
+        className="link font-semibold"
         href={href}
         target="_blank"
       >
@@ -100,7 +97,7 @@ export default function AppFooter() {
             <FooterLinkGroup col>
               {versions.map(([href, label]) => (
                 <li key={label}>
-                  <Link className={TRANSITION} href={href}>
+                  <Link className="link" href={href}>
                     {label}
                   </Link>
                 </li>

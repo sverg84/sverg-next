@@ -48,21 +48,5 @@ const items: Item[] = [
 ];
 
 export default function Projects() {
-  return (
-    <TimelineBase
-      contentTheme={{ root: { base: "mt-3 sm:pl-8" } }}
-      id="projects"
-      items={items}
-      itemTheme={{ root: { vertical: "mb-10 mr-3 md:mr-6" } }}
-      label="Projects"
-      rightAlign={true}
-      timelineTheme={{
-        root: {
-          direction: {
-            vertical: "relative border-r border-gray-200 dark:border-gray-700",
-          },
-        },
-      }}
-    />
-  );
+  return <TimelineBase id="projects" items={items} label="Projects" />;
 }

@@ -19,46 +19,23 @@ import Point from "./point";
 import Link from "next/link";
 
 type Props = Readonly<{
-  contentTheme?: TimelineContentProps["theme"];
   id: string;
   items: ReadonlyArray<Item>;
-  itemTheme?: TimelineItemProps["theme"];
   label: string;
-  rightAlign?: boolean;
-  timelineTheme?: TimelineProps["theme"];
 }>;
 
-export default function TimelineBase({
-  contentTheme,
-  id,
-  items,
-  itemTheme,
-  label,
-  rightAlign = false,
-  timelineTheme,
-}: Props) {
-  const textAlign = rightAlign ? "text-right" : "text-left";
-
+export default function TimelineBase({ id, items, label }: Props) {
   return (
     <section className="body-section flex flex-col" id={id}>
-      <h2
-        className={`section-header ${rightAlign ? "lg:self-end" : "lg:self-start"}`}
-      >
-        {label}
-      </h2>
-      <Timeline className="group/timeline max-w-full" theme={timelineTheme}>
+      <h2 className="section-header lg:self-start">{label}</h2>
+      <Timeline className="group/timeline max-w-full">
         {items.map(({ body, href, id, skills, time, title }) => (
-          <TimelineItem
-            className="group mb-5 transition-all md:mb-10"
-            key={id}
-            theme={itemTheme}
-          >
-            <Point rightAlign={rightAlign} iconId={id} />
+          <TimelineItem className="group mb-5 transition-all md:mb-10" key={id}>
+            <Point iconId={id} />
             <TimelineContent
               className="lg:group-hover:shadow-[inset 0 1px 1px rgba(148,163,184,0.1)] relative
                 transition motion-reduce:transition-none lg:rounded-lg lg:hover:!opacity-100
                 lg:group-hover/timeline:opacity-50 dark:lg:hover:bg-slate-800/50"
-              theme={contentTheme}
             >
               <Link
                 aria-hidden={true}
@@ -73,14 +50,11 @@ export default function TimelineBase({
                 </TimelineTime>
               )}
               <TimelineTitle
-                className={`${textAlign} text-sm transition ease-linear motion-reduce:transition-none
-                md:text-base lg:text-lg lg:group-hover:text-cyan-700
-                dark:lg:group-hover:text-emerald-300`}
+                className="text-sm transition ease-linear motion-reduce:transition-none md:text-base
+                  lg:text-lg lg:group-hover:text-cyan-700 dark:lg:group-hover:text-emerald-300"
               >
                 <Link
-                  className="group/title relative inline-flex items-center gap-x-1 hover:text-cyan-700
-                    focus-visible:text-cyan-700 dark:hover:text-emerald-300
-                    dark:focus-visible:text-emerald-300 lg:gap-x-2"
+                  className="group/title link relative inline-flex items-center gap-x-1 lg:gap-x-2"
                   href={href}
                   target="_blank"
                 >
@@ -93,11 +67,7 @@ export default function TimelineBase({
                   />
                 </Link>
               </TimelineTitle>
-              <TimelineBody
-                className={`flex flex-col gap-y-2 text-xs md:text-sm lg:text-base ${textAlign} ${
-                  rightAlign ? "items-end" : "items-start"
-                }`}
-              >
+              <TimelineBody className="flex flex-col gap-y-2 text-xs md:text-sm lg:text-base">
                 <span>{body}</span>
                 <div className="flex gap-x-4">
                   {skills.map((skill) => (
