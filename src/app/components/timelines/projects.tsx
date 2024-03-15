@@ -13,7 +13,7 @@ const items: Item[] = [
     title: 'Simple "Keyboard" Piano',
   },
   {
-    body: "FastAPI application + Chrome Web extensions that generates\
+    body: "FastAPI application + Chrome Web extension that generates\
     a shortened version of the current tab URL on right-click using\
     Chrome's context menus and notifications, and redirects user from\
     shortened link to original URL when entered in the address bar.",
