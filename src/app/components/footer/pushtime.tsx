@@ -1,4 +1,6 @@
 import { Tooltip } from "flowbite-react";
+import clientLocale from "./locale";
+import ClientLocale from "./locale";
 
 // https://stackoverflow.com/questions/6108819/javascript-timestamp-to-relative-time
 const RTF = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
@@ -47,7 +49,7 @@ export default async function LatestPushTime() {
   return (
     <div className="flex gap-x-2 text-xs xs:text-sm">
       Latest update:
-      <Tooltip content={pushTimeAsDate.toLocaleString()}>
+      <Tooltip content={<ClientLocale date={pushTimeAsDate} />}>
         <time className="underline decoration-dotted">
           {relativeTimeFromElapsed(timeSinceLastPush)}
         </time>
