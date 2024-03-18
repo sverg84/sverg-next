@@ -9,6 +9,12 @@ import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const url = new URL(
+  process.env.NODE_ENV === "production"
+    ? "https://stephenvergara.com"
+    : "http://localhost:3000",
+);
+
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: dark)", color: "#000000" },
@@ -19,11 +25,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Stephen Vergara",
   description: "Stephen's porfolio, powered by Next.js",
-  metadataBase: new URL(
-    process.env.NODE_ENV === "production"
-      ? "https://stephenvergara.com"
-      : "http://localhost:3000",
-  ),
+  metadataBase: url,
+  openGraph: {
+    url,
+  },
 };
 
 export default function RootLayout({
