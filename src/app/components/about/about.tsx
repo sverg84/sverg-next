@@ -5,12 +5,6 @@ import MyName from "@/app/consts/name";
 import Utapau from "./utapau";
 import Link from "next/link";
 
-function Language({ language }: { language: string }) {
-  return (
-    <strong className="text-cyan-700 dark:text-emerald-300">{language}</strong>
-  );
-}
-
 export default function AboutMeBody() {
   return (
     <section
