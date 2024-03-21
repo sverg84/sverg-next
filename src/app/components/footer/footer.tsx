@@ -2,12 +2,11 @@ import type { IconType } from "react-icons";
 import {
   Footer,
   FooterDivider,
-  FooterIcon,
   FooterLinkGroup,
   FooterTitle,
 } from "flowbite-react";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
-import { SiLetterboxd } from "react-icons/si";
+import { SiAlltrails, SiLetterboxd } from "react-icons/si";
 import Link from "next/link";
 import { Suspense } from "react";
 import LatestPushTime from "./pushtime";
@@ -24,6 +23,11 @@ const icons = [
     href: "https://letterboxd.com/sverg/",
     Icon: SiLetterboxd,
     label: "Letterboxd",
+  },
+  {
+    href: "https://www.alltrails.com/members/stephen-vergara",
+    Icon: SiAlltrails,
+    label: "AllTrails",
   },
   {
     href: "https://www.facebook.com/stephen.vergara.0",
