@@ -31,7 +31,11 @@ export default function Hero() {
             className="max-w-sm text-center text-xl font-extrabold text-white xs:max-w-lg xs:text-start
               xs:text-[2.125rem] sm:text-5xl/[3.5rem]"
           >
-            Hi! I&apos;m Stephen, a <span>UI/UX Engineer</span>.
+            Hi! I&apos;m Stephen, a{" "}
+            <span className="text-cyan-700 dark:text-emerald-300">
+              UI/UX Engineer
+            </span>
+            .
           </h1>
 
           <p
