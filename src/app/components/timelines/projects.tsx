@@ -1,5 +1,6 @@
 import type { Item } from "@/app/types/item";
 
+import Skill from "@/app/consts/skill";
 import TimelineBase from "./base";
 
 const items: Item[] = [
@@ -9,7 +10,7 @@ const items: Item[] = [
       using the Simple and Fast Multimedia Library (SFML).",
     href: "https://github.com/sverg84/cpp_piano",
     id: "piano",
-    skills: ["C++", "SFML"],
+    skills: [Skill.Cplusplus, Skill.SFML],
     title: 'Simple "Keyboard" Piano',
   },
   {
@@ -19,7 +20,7 @@ const items: Item[] = [
     shortened link to original URL when entered in the address bar.",
     href: "https://github.com/sverg84/url-shortener",
     id: "url",
-    skills: ["Python", "PostgreSQL", "Chrome Extensions"],
+    skills: [Skill.Python, Skill.PostgreSQL, Skill.ChromeX],
     title: "URL Shortener",
   },
   {
@@ -27,7 +28,14 @@ const items: Item[] = [
     schemes and supported with unit and end-to-end testing.",
     href: "https://sverg84.github.io",
     id: "v1",
-    skills: ["React", "TypeScript", "SCSS", "Bootstrap", "Jest", "Puppeteer"],
+    skills: [
+      Skill.React,
+      Skill.TypeScript,
+      Skill.SCSS,
+      Skill.Bootstrap,
+      Skill.Jest,
+      Skill.Puppeteer,
+    ],
     title: "v1 (GitHub Pages)",
   },
   {
@@ -35,14 +43,21 @@ const items: Item[] = [
     via AWS Lambda and DynamoDB and assets saved in S3 and CloudFront.",
     href: "https://sverg84.com",
     id: "v2",
-    skills: ["Remix", "Node.js", "Mantine", "Vanilla Extract", "AWS", "SST"],
+    skills: [
+      Skill.Remix,
+      Skill.Node,
+      Skill.Mantine,
+      Skill.VanillaExtract,
+      Skill.AWS,
+      Skill.SST,
+    ],
     title: "v2 (Remix + AWS)",
   },
   {
     body: "Optimum performance and accessibility, built with Next.js and TailwindCSS.",
     href: "/",
     id: "v3",
-    skills: ["Next.js", "TailwindCSS", "Flowbite", "Vercel"],
+    skills: [Skill.NextJS, Skill.TailwindCSS, Skill.Flowbite, Skill.Vercel],
     title: "v3",
   },
 ];

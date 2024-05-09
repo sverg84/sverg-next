@@ -5,6 +5,7 @@ import { PiPianoKeysFill, PiShirtFoldedFill } from "react-icons/pi";
 import {
   SiFacebook,
   SiMeta,
+  SiMcdonalds,
   SiNextdotjs,
   SiRemix,
   SiSass,
@@ -13,6 +14,7 @@ import { SlLink } from "react-icons/sl";
 
 const icons = new Map([
   ["fb-intern", SiFacebook],
+  ["mcd", SiMcdonalds],
   ["meta-swe", SiMeta],
   ["piano", PiPianoKeysFill],
   ["umich-urop", PiShirtFoldedFill],
