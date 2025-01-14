@@ -5,11 +5,24 @@ import TimelineBase from "./base";
 
 const items: Item[] = [
   {
-    body: `Full-stack Web engineer for McDonald's "Value Creation Engine"
-    vendor product. Will start end of May, further information TBD.`,
-    href: "https://www.mcdonalds.com",
+    body: `Full-stack Web engineer for McDonald's Value Creation Engine.\
+    Designed experimental features for marketers to create offers and promotion\
+    campaigns for McDonald's restaurants. End-to-end contributions to microservices\
+    and React client.`,
+    href: "https://corporate.mcdonalds.com/",
     id: "mcd",
-    skills: [Skill.React, Skill.TypeScript, Skill.Node],
+    skills: [
+      Skill.React,
+      Skill.GraphQL,
+      Skill.NestJS,
+      Skill.AWS,
+      Skill.TypeScript,
+      Skill.PostgreSQL,
+      Skill.Apollo,
+      Skill.Emotion,
+      Skill.Jest,
+      Skill.MaterialUI,
+    ],
     time: "2024-Present",
     title: "Software Engineer II at McDonald's Corporation",
   },

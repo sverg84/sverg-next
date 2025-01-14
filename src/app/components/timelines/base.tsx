@@ -1,7 +1,6 @@
 import type { Item } from "@/app/types/item";
 
 import {
-  Badge,
   Timeline,
   TimelineBody,
   TimelineContent,
@@ -12,6 +11,7 @@ import {
 import { PiArrowUpRight } from "react-icons/pi";
 import Point from "./point";
 import Link from "next/link";
+import TimelineSkills from "./skills";
 
 type Props = Readonly<{
   id: string;
@@ -66,19 +66,8 @@ export default function TimelineBase({ id, items, label }: Props) {
                 </Link>
               </TimelineTitle>
               <TimelineBody className="flex flex-col gap-y-2 text-xs md:text-sm lg:text-base">
-                <span>{body}</span>
-                <div className="flex flex-wrap gap-x-4 gap-y-2">
-                  {skills.map((skill) => (
-                    <Badge
-                      className="rounded-lg px-1 py-[0.0625rem] text-[0.6rem] text-cyan-700
-                        group-hover:bg-cyan-100 dark:bg-emerald-800 dark:text-emerald-300
-                        dark:group-hover:bg-emerald-800 md:px-2 md:py-0.5 md:text-xs"
-                      key={`${id}-${skill}`}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
+                <p>{body}</p>
+                <TimelineSkills id={id} skills={skills} />
               </TimelineBody>
             </TimelineContent>
           </TimelineItem>
