@@ -50,8 +50,23 @@ export default function AboutMeBody() {
           styling methods.
         </p>
         <p>
-          When I&apos;m not coding, however, I love kayaking, singing karaoke,
-          and playing video games!
+          I have been a full-stack web developer for the McDonald&apos;s
+          Corporation since May 2024, where I ramped up in learning
+          microservices through NestJS and transferring my GraphQL and React
+          experience to the company&apos;s marketing McProducts.
+        </p>
+        <p>
+          When I&apos;m not coding, however, I love kayaking, hiking, singing
+          karaoke, and playing video games! I am very into science fiction and
+          fantasy, and love a good happy hour and{" "}
+          <Link
+            className="link font-bold"
+            href="https://www.dndbeyond.com"
+            target="_blank"
+          >
+            DnD
+          </Link>{" "}
+          session.
         </p>
       </div>
     </section>
