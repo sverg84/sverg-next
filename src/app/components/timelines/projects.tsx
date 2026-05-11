@@ -1,16 +1,34 @@
 import type { Item } from "@/app/types/item";
 
-import Skill from "@/app/consts/skill";
 import TimelineBase from "./base";
 
 const items: Item[] = [
+  {
+    body: "Full-stack recipe app with Next.js, React, Tailwind CSS, and shadcn/ui; Apollo Client for GraphQL; AI-assisted allergen detection with Anthropic Claude on Amazon Bedrock.",
+    href: "https://kitchenkin.app",
+    id: "kitchenkin",
+    skills: [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "React",
+      "GraphQL",
+      "Apollo",
+      "AWS",
+      "Vercel",
+      "shadcn/ui",
+      "Amazon Bedrock",
+      "Anthropic Claude",
+    ],
+    title: "KitchenKin Recipe App",
+  },
   {
     body: "Small app that presents a user's computer keyboard\
       as a virtual piano keyboard, built with a GUI and audio playback\
       using the Simple and Fast Multimedia Library (SFML).",
     href: "https://github.com/sverg84/cpp_piano",
     id: "piano",
-    skills: [Skill.Cplusplus, Skill.SFML],
+    skills: ["C++", "SFML"],
     title: 'Simple "Keyboard" Piano',
   },
   {
@@ -20,7 +38,7 @@ const items: Item[] = [
     shortened link to original URL when entered in the address bar.",
     href: "https://github.com/sverg84/url-shortener",
     id: "url",
-    skills: [Skill.Python, Skill.PostgreSQL, Skill.ChromeX],
+    skills: ["Python", "PostgreSQL", "Chrome Extensions"],
     title: "URL Shortener",
   },
   {
@@ -29,12 +47,12 @@ const items: Item[] = [
     href: "https://sverg84.github.io",
     id: "v1",
     skills: [
-      Skill.React,
-      Skill.TypeScript,
-      Skill.SCSS,
-      Skill.Bootstrap,
-      Skill.Jest,
-      Skill.Puppeteer,
+      "React",
+      "TypeScript",
+      "SCSS",
+      "Bootstrap",
+      "Jest",
+      "Puppeteer",
     ],
     title: "v1 (GitHub Pages)",
   },
@@ -44,12 +62,12 @@ const items: Item[] = [
     href: "https://sverg84.com",
     id: "v2",
     skills: [
-      Skill.Remix,
-      Skill.Node,
-      Skill.Mantine,
-      Skill.VanillaExtract,
-      Skill.AWS,
-      Skill.SST,
+      "Remix",
+      "Node.js",
+      "Mantine",
+      "Vanilla Extract",
+      "AWS",
+      "SST",
     ],
     title: "v2 (Remix + AWS)",
   },
@@ -57,7 +75,7 @@ const items: Item[] = [
     body: "Optimum performance and accessibility, built with Next.js and TailwindCSS.",
     href: "/",
     id: "v3",
-    skills: [Skill.NextJS, Skill.TailwindCSS, Skill.Flowbite, Skill.Vercel],
+    skills: ["Next.js", "TailwindCSS", "Flowbite", "Vercel"],
     title: "v3",
   },
 ];

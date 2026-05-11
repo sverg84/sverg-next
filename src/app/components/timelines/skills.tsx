@@ -1,13 +1,12 @@
-import Skill from "@/app/consts/skill";
 import TimelineBadge from "./badge";
 import { Tooltip } from "flowbite-react";
 
 type Props = Readonly<{
   id: string;
-  skills: ReadonlyArray<Skill>;
+  skills: ReadonlyArray<string>;
 }>;
 
-const MAX_BADGES = 6;
+const MAX_BADGES = 10;
 
 export default function TimelineSkills({ id, skills }: Props) {
   const skillsFirstSlice = skills.slice(

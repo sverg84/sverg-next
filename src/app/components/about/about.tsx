@@ -50,10 +50,14 @@ export default function AboutMeBody() {
           styling methods.
         </p>
         <p>
-          I have been a full-stack web developer for the McDonald&apos;s
-          Corporation since May 2024, where I ramped up in learning
-          microservices through NestJS and transferring my GraphQL and React
-          experience to the company&apos;s marketing McProducts.
+          After Meta, I was a full-stack web engineer at McDonald&apos;s
+          Corporation from May 2024 through October 2025, working on a
+          configuration platform and global deal engines for kiosk and mobile
+          experiences in Europe—GraphQL, Apollo, NestJS, and React on
+          high-volume consumer surfaces. I then joined Coinbase as a software
+          engineer on the design systems team (CDS), contributing shared React
+          and React Native UI across consumer, logged-out, and public surfaces
+          through May 2026.
         </p>
         <p>
           When I&apos;m not coding, however, I love kayaking, hiking, singing

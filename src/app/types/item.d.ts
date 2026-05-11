@@ -2,7 +2,7 @@ export type Item = Readonly<{
   body: string;
   href: string;
   id: string;
-  skills: ReadonlyArray<Skill>;
+  skills: ReadonlyArray<string>;
   time?: string;
   title: string;
 }>;
