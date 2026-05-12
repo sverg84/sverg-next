@@ -44,6 +44,7 @@ export default function Hero() {
           <source media="(max-width: 640px)" srcSet={sm} />
           <img
             {...rest}
+            alt={common.alt}
             className="lg:bg-hero-lg z-[-1] bg-hero bg-cover bg-center"
           />
         </picture>

@@ -1,5 +1,4 @@
 import { Tooltip } from "flowbite-react";
-import clientLocale from "./locale";
 import ClientLocale from "./locale";
 
 // https://stackoverflow.com/questions/6108819/javascript-timestamp-to-relative-time
@@ -35,10 +34,12 @@ async function genData(): Promise<number> {
     },
   );
 
-  const {
-    deployments: [{ ready }],
-  } = await response.json();
-
+  const data: { deployments?: ReadonlyArray<{ ready?: number }> } =
+    await response.json();
+  const ready = data.deployments?.[0]?.ready;
+  if (typeof ready !== "number") {
+    return Date.now();
+  }
   return ready;
 }
 

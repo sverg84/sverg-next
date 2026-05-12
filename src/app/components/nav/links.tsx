@@ -2,7 +2,7 @@
 
 import { NavbarLink } from "flowbite-react";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { startTransition, useEffect, useRef, useState } from "react";
 
 const HOME = "#home";
 
@@ -24,10 +24,14 @@ export default function NavLinks() {
 
     if (hash.length > 0) {
       document.querySelector(hash)?.scrollIntoView(true);
-      setActiveHref(hash);
+      startTransition(() => {
+        setActiveHref(hash);
+      });
     }
 
-    setIsClient(true);
+    startTransition(() => {
+      setIsClient(true);
+    });
 
     observerRef.current = new IntersectionObserver(
       ([entry]) => {

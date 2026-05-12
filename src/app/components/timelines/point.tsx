@@ -1,8 +1,13 @@
 "use client";
 
 import { TimelinePoint } from "flowbite-react";
-import { PiPianoKeysFill, PiShirtFoldedFill } from "react-icons/pi";
 import {
+  PiChefHatFill,
+  PiPianoKeysFill,
+  PiShirtFoldedFill,
+} from "react-icons/pi";
+import {
+  SiCoinbase,
   SiFacebook,
   SiMeta,
   SiMcdonalds,
@@ -13,7 +18,9 @@ import {
 import { SlLink } from "react-icons/sl";
 
 const icons = new Map([
+  ["coinbase", SiCoinbase],
   ["fb-intern", SiFacebook],
+  ["kitchenkin", PiChefHatFill],
   ["mcd", SiMcdonalds],
   ["meta-swe", SiMeta],
   ["piano", PiPianoKeysFill],
