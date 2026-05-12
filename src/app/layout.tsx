@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Flowbite, ThemeModeScript } from "flowbite-react";
+import { ThemeModeScript } from "flowbite-react";
+import { ThemeInit } from "../../.flowbite-react/init";
 import Nav from "./components/nav/nav";
 import AppFooter from "./components/footer/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -42,14 +43,13 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body
-        className={`${inter.className} bg-[rgb(214, 219, 220)] bg-gradient-to-t from-transparent
+        className={`${inter.className} bg-[rgb(214, 219, 220)] bg-linear-to-t from-transparent
         to-white text-black dark:bg-black dark:to-black dark:text-white`}
       >
-        <Flowbite>
-          <Nav />
-          {children}
-          <AppFooter />
-        </Flowbite>
+        <ThemeInit />
+        <Nav />
+        {children}
+        <AppFooter />
         <SpeedInsights />
         <Analytics />
       </body>

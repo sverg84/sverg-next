@@ -21,20 +21,19 @@ export default function ExternalLinkButton({ href, Icon, label }: Props) {
   return (
     <Tooltip content={label} placement="bottom">
       <Button
+        as="a"
         aria-label={label}
         color="sverg"
         href={href}
         outline={true}
         pill={true}
+        rel="noopener noreferrer"
         target="_blank"
         theme={{
-          outline: {
-            color: {
-              sverg:
-                "text-white bg-cyan-700 border border-transparent dark:bg-emerald-300 focus:ring-4 focus:ring-cyan-600 dark:focus:ring-emerald-900",
-            },
-            on:
-              "flex text-black dark:text-white hover:bg-cyan-700 hover:text-white justify-center bg-slate-50 transition-all dark:hover:bg-emerald-300 dark:hover:text-black duration-75 ease-in group-enabled:group-hover:bg-opacity-0 group-enabled:group-hover:text-inherit dark:bg-gray-900 w-full " +
+          outlineColor: {
+            sverg:
+              "text-white bg-cyan-700 border border-transparent dark:bg-emerald-300 focus:ring-4 focus:ring-cyan-600 dark:focus:ring-emerald-900 " +
+              "flex text-black dark:text-white hover:bg-cyan-700 hover:text-white justify-center bg-slate-50 transition-all dark:hover:bg-emerald-300 dark:hover:text-black duration-75 ease-in group-enabled:group-hover:bg-transparent group-enabled:group-hover:text-inherit dark:bg-gray-900 w-full " +
               className,
           },
         }}

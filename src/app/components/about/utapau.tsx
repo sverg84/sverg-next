@@ -5,7 +5,7 @@ export default function Utapau() {
     <Tooltip
       content="General Kenobi!"
       theme={{
-        base: "cursor-grievous absolute inline-block z-10 rounded-lg py-2 px-3 text-sm font-medium shadow-sm",
+        base: "cursor-grievous absolute inline-block z-10 rounded-lg py-2 px-3 text-sm font-medium shadow-xs",
         target: "self-center h-fit w-fit",
       }}
     >

@@ -5,7 +5,7 @@ const config = {
     "prettier-plugin-classnames",
     "prettier-plugin-merge",
   ],
-  tailwindConfig: "./tailwind.config.ts",
+  tailwindStylesheet: "./src/app/globals.css",
 };
 
 export default config;

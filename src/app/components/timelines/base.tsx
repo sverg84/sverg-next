@@ -32,7 +32,7 @@ export default function TimelineBase({ id, items, label }: Props) {
             <Point iconId={id} />
             <TimelineContent
               className="lg:group-hover:shadow-[inset 0 1px 1px rgba(148,163,184,0.1)] relative
-                transition motion-reduce:transition-none lg:rounded-lg lg:hover:!opacity-100
+                transition motion-reduce:transition-none lg:rounded-lg lg:hover:opacity-100!
                 lg:group-hover/timeline:opacity-50 dark:lg:hover:bg-slate-800/50"
             >
               <Link

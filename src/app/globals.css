@@ -1,31 +1,76 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../../.flowbite-react/class-list.json";
+
+@theme {
+  --breakpoint-2xs: 360px;
+  --breakpoint-xs: 480px;
+
+  --color-night-sky: #283e51;
+  --color-night-sky-2: #0a2342;
+
+  --cursor-grievous: url(https://dv8qyiytu2cuu.cloudfront.net/grievous_cursor.png),
+    auto;
+  --cursor-obi-wan: url(https://dv8qyiytu2cuu.cloudfront.net/obi_saber.png), auto;
+
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+  --background-image-hero: linear-gradient(250deg, #00000000 0%, #011c02 90%);
+  --background-image-hero-lg: linear-gradient(250deg, #00000000 0%, #062343 70%);
+  --background-image-utapau-dark: linear-gradient(
+    to right,
+    #a6ecff,
+    #a6ecff 50%,
+    royalblue 50%
+  );
+  --background-image-utapau-light: linear-gradient(
+    to right,
+    #31ccff,
+    #31ccff 50%,
+    royalblue 50%
+  );
+
+  --animate-fade-in-right: fade-in-right 1s ease both;
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 
 @layer base {
   html,
   body {
     scroll-behavior: smooth;
-    scroll-padding-top: theme("spacing.20");
+    scroll-padding-top: var(--spacing-20);
   }
 }
 
 @layer components {
   .body-section {
     align-items: center;
-    row-gap: theme("spacing.4");
+    row-gap: var(--spacing-4);
   }
   .section-header {
-    font-size: theme("fontSize.xl");
-    font-weight: theme("fontWeight.semibold");
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-semibold);
 
-    @media screen(lg) {
-      font-size: theme("fontSize.2xl");
+    @media (width >= theme(--breakpoint-lg)) {
+      font-size: var(--text-2xl);
     }
   }
   .utapau {
     display: inline-block;
-    cursor: theme("cursor.obi-wan");
+    cursor: var(--cursor-obi-wan);
     overflow: hidden;
     background-clip: text;
     background-size: 200%;
@@ -46,8 +91,6 @@
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@utility text-balance {
+  text-wrap: balance;
 }
