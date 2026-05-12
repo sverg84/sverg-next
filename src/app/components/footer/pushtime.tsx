@@ -1,4 +1,5 @@
 import { Tooltip } from "flowbite-react";
+import { connection } from "next/server";
 import ClientLocale from "./locale";
 
 // https://stackoverflow.com/questions/6108819/javascript-timestamp-to-relative-time
@@ -44,6 +45,8 @@ async function genData(): Promise<number> {
 }
 
 export default async function LatestPushTime() {
+  // Cache Components: opt into request time before `new Date()` for relative "latest update" text.
+  await connection();
   const ready = await genData();
   const pushTimeAsDate = new Date(ready);
   const timeSinceLastPush = pushTimeAsDate.getTime() - new Date().getTime();
