@@ -68,27 +68,23 @@
       font-size: var(--text-2xl);
     }
   }
-  .utapau {
-    display: inline-block;
-    cursor: var(--cursor-obi-wan);
-    overflow: hidden;
-    background-clip: text;
-    background-size: 200%;
-    background-position: 100%;
-    transition: background-position 275ms ease;
-    -webkit-text-fill-color: transparent;
-    vertical-align: top;
-  }
-
-  .utapau:hover {
-    background-position: 0 100%;
-  }
-
   .link {
     @apply hover:text-cyan-700 dark:hover:text-emerald-300;
     @apply focus-visible:text-cyan-700 dark:focus-visible:text-emerald-300;
     @apply transition ease-linear motion-reduce:transition-none;
   }
+}
+
+@utility utapau {
+  display: inline-block;
+  cursor: var(--cursor-obi-wan);
+  overflow: hidden;
+  background-clip: text;
+  background-size: 200%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  -webkit-text-fill-color: transparent;
+  vertical-align: top;
 }
 
 @utility text-balance {

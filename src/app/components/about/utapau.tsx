@@ -9,7 +9,7 @@ export default function Utapau() {
         target: "self-center h-fit w-fit",
       }}
     >
-      <span className="lg:utapau text-lg font-bold lg:bg-utapau-light lg:dark:bg-utapau-dark">
+      <span className="lg:utapau text-lg font-bold lg:bg-utapau-light lg:dark:bg-utapau-dark lg:hover:bg-[position:0_100%]">
         Hello there!
       </span>
     </Tooltip>
