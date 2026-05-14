@@ -1,22 +1,11 @@
 import type { IconType } from "react-icons";
-import {
-  Footer,
-  FooterDivider,
-  FooterLinkGroup,
-  FooterTitle,
-} from "flowbite-react";
+import { Footer } from "flowbite-react";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiAlltrails, SiLetterboxd } from "react-icons/si";
-import Link from "next/link";
 import { Suspense } from "react";
 import LatestPushTime from "./pushtime";
 
 type IconLinkProps = Readonly<{ href: string; Icon: IconType; label: string }>;
-type TechLinkProps = Readonly<{
-  href: string;
-  label: string;
-  leadingText: string;
-}>;
 
 const icons = [
   {
@@ -42,27 +31,16 @@ const icons = [
   { href: "https://github.com/sverg84", Icon: BsGithub, label: "GitHub" },
 ];
 
-const tech = [
-  { href: "https://nextjs.org/", label: "Next.js", leadingText: "Powered by" },
-  {
-    href: "https://tailwindcss.com/",
-    label: "Tailwind",
-    leadingText: "Styled with",
-  },
-  { href: "https://flowbite.com/", label: "Flowbite", leadingText: "Built on" },
-  { href: "https://vercel.com/", label: "Vercel", leadingText: "Deployed to" },
-];
-
-const versions = [
-  ["https://sverg84.github.io", "v1 (GitHub Pages)"],
-  ["https://sverg84.com", "v2 (Remix + AWS)"],
-];
-
 function IconLink({ href, Icon, label }: IconLinkProps) {
   return (
     <a
       aria-label={`${label} (opens in a new tab)`}
-      className="link text-gray-600 dark:text-gray-300"
+      className="link inline-flex rounded-sm text-gray-600 outline-none hover:text-cyan-700
+        focus-visible:text-cyan-700 focus-visible:ring-2 focus-visible:ring-cyan-700
+        focus-visible:ring-offset-1 focus-visible:ring-offset-[var(--color-page-bg)]
+        focus-visible:outline-none dark:text-gray-300 dark:hover:text-emerald-300
+        dark:focus-visible:text-emerald-300 dark:focus-visible:ring-emerald-400
+        dark:focus-visible:ring-offset-[var(--color-page-bg)]"
       href={href}
       target="_blank"
     >
@@ -71,25 +49,12 @@ function IconLink({ href, Icon, label }: IconLinkProps) {
   );
 }
 
-function TechLink({ href, label, leadingText }: TechLinkProps) {
-  return (
-    <span className="text-center">
-      {leadingText}&nbsp;
-      <Link
-        aria-label={label}
-        className="link block font-semibold 2xs:inline-block"
-        href={href}
-        target="_blank"
-      >
-        {label}
-      </Link>
-    </span>
-  );
-}
-
 export default function AppFooter() {
   return (
-    <Footer className="rounded-none bg-page-bg" container>
+    <Footer
+      className="rounded-none border-t border-page-border bg-page-bg"
+      container
+    >
       <Suspense fallback={<div />}>
         <LatestPushTime />
       </Suspense>
