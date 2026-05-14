@@ -5,6 +5,9 @@ import { ThemeModeScript } from "flowbite-react";
 import { ThemeInit } from "../../.flowbite-react/init";
 import Nav from "./components/nav/nav";
 import AppFooter from "./components/footer/footer";
+import FlowbiteThemeRoot from "./components/flowbite-theme-root";
+import SkipLink from "./components/skip-link";
+import ThemeColorSync from "./components/theme-color-sync";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -17,16 +20,20 @@ const url = new URL(
 );
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-    { media: "(prefers-color-scheme: light)", color: "rgb(214, 219, 220)" },
-  ],
+  /** Default until ThemeColorSync aligns with `html.dark`. */
+  themeColor: "#cfd8e8",
 };
 
 export const metadata: Metadata = {
-  title: "Stephen Vergara",
-  description: "Stephen's porfolio, powered by Next.js",
+  title: {
+    default: "Stephen Vergara",
+    template: "%s | Stephen Vergara",
+  },
+  description: "Stephen's portfolio, powered by Next.js",
   metadataBase: url,
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     url,
   },
@@ -43,13 +50,16 @@ export default function RootLayout({
         <ThemeModeScript />
       </head>
       <body
-        className={`${inter.className} bg-[rgb(214, 219, 220)] bg-linear-to-t from-transparent
-        to-white text-black dark:bg-black dark:to-black dark:text-white`}
+        className={`${inter.className} bg-page-bg text-black dark:text-white`}
       >
+        <SkipLink />
         <ThemeInit />
-        <Nav />
-        {children}
-        <AppFooter />
+        <ThemeColorSync />
+        <FlowbiteThemeRoot>
+          <Nav />
+          {children}
+          <AppFooter />
+        </FlowbiteThemeRoot>
         <SpeedInsights />
         <Analytics />
       </body>
