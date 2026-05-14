@@ -31,6 +31,7 @@ export default function TimelineSkills({ id, skills }: Props) {
       {skills.length > MAX_BADGES && (
         <Tooltip
           className="text-center lg:hidden"
+          // Local only: `lg:hidden` target would break default tooltips if applied globally.
           content={
             <div className="flex flex-col">
               {skills.slice(MAX_BADGES - 1).map((skill) => (

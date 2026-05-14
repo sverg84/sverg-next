@@ -32,8 +32,9 @@ export default function TimelineBase({ id, items, label }: Props) {
             <Point iconId={id} />
             <TimelineContent
               className="lg:group-hover:shadow-[inset 0 1px 1px rgba(148,163,184,0.1)] relative
-                transition motion-reduce:transition-none lg:rounded-lg lg:hover:opacity-100!
-                lg:group-hover/timeline:opacity-50 dark:lg:hover:bg-slate-800/50"
+                transition motion-reduce:transition-none lg:rounded-lg
+                lg:group-hover/timeline:opacity-50 lg:hover:bg-slate-200/55
+                lg:hover:opacity-100! dark:lg:hover:bg-slate-800/50"
             >
               <Link
                 aria-hidden={true}
@@ -58,10 +59,10 @@ export default function TimelineBase({ id, items, label }: Props) {
                 >
                   {title}
                   <PiArrowUpRight
-                    className="transition group-hover/title:-translate-y-1 group-hover/title:translate-x-1
-                      group-focus-visible/title:-translate-y-1 group-focus-visible/title:translate-x-1
-                      motion-reduce:transition-none lg:group-hover:-translate-y-1
-                      lg:group-hover:translate-x-1"
+                    className="transition group-hover/title:translate-x-1 group-hover/title:-translate-y-1
+                      group-focus-visible/title:translate-x-1 group-focus-visible/title:-translate-y-1
+                      motion-reduce:transition-none lg:group-hover:translate-x-1
+                      lg:group-hover:-translate-y-1"
                   />
                 </Link>
               </TimelineTitle>

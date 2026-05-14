@@ -46,14 +46,7 @@ const items: Item[] = [
     schemes and supported with unit and end-to-end testing.",
     href: "https://sverg84.github.io",
     id: "v1",
-    skills: [
-      "React",
-      "TypeScript",
-      "SCSS",
-      "Bootstrap",
-      "Jest",
-      "Puppeteer",
-    ],
+    skills: ["React", "TypeScript", "SCSS", "Bootstrap", "Jest", "Puppeteer"],
     title: "v1 (GitHub Pages)",
   },
   {
@@ -61,14 +54,7 @@ const items: Item[] = [
     via AWS Lambda and DynamoDB and assets saved in S3 and CloudFront.",
     href: "https://sverg84.com",
     id: "v2",
-    skills: [
-      "Remix",
-      "Node.js",
-      "Mantine",
-      "Vanilla Extract",
-      "AWS",
-      "SST",
-    ],
+    skills: ["Remix", "Node.js", "Mantine", "Vanilla Extract", "AWS", "SST"],
     title: "v2 (Remix + AWS)",
   },
   {
