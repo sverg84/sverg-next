@@ -16,18 +16,20 @@ export default function Nav() {
   return (
     <Navbar
       fluid
-      className="sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700"
+      className="sticky top-0 z-50 border-b border-[color:var(--color-page-border)] bg-page-bg
+        backdrop-blur-sm"
     >
       <NavbarBrand as={Link} href="/">
         <Image
-          src="https://www.flowbite-react.com/favicon.svg"
+          src="/icon.svg"
           className="mr-3 h-6 w-6 xs:h-9 xs:w-9"
-          alt="Flowbite React Logo"
+          alt=""
           width={36}
           height={36}
+          priority
         />
         <span
-          className="text-md hidden self-center whitespace-nowrap font-semibold min-[360px]:block
+          className="text-md hidden self-center font-semibold whitespace-nowrap min-[360px]:block
             xs:text-xl"
         >
           {MyName}

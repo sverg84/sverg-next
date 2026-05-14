@@ -62,7 +62,7 @@ function IconLink({ href, Icon, label }: IconLinkProps) {
   return (
     <a
       aria-label={`${label} (opens in a new tab)`}
-      className="link text-gray-500"
+      className="link text-gray-600 dark:text-gray-300"
       href={href}
       target="_blank"
     >
@@ -89,42 +89,16 @@ function TechLink({ href, label, leadingText }: TechLinkProps) {
 
 export default function AppFooter() {
   return (
-    <Footer className="rounded-none" container>
-      <div className="w-full">
-        <div className="grid w-full gap-y-8 sm:flex sm:justify-around sm:gap-y-0 md:flex md:grid-cols-1">
-          <div className="grid grid-cols-2 items-center justify-items-center gap-8 text-sm">
-            {tech.map((item) => (
-              <TechLink key={item.label} {...item} />
-            ))}
-          </div>
-          <div className="justify-self-center text-center sm:text-start">
-            <FooterTitle title="Older versions" />
-            <FooterLinkGroup col>
-              {versions.map(([href, label]) => (
-                <li key={label}>
-                  <Link className="link" href={href}>
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </FooterLinkGroup>
-          </div>
-        </div>
-        <FooterDivider />
-        <div
-          className="flex w-full flex-col items-center gap-y-4 xs:flex-row xs:justify-between
-            xs:gap-y-0"
-        >
-          <Suspense fallback={<div />}>
-            <LatestPushTime />
-          </Suspense>
-          <div className="flex space-x-6">
-            {icons.map((item) => (
-              <IconLink key={item.label} {...item} />
-            ))}
-          </div>
-        </div>
+    <Footer className="rounded-none bg-page-bg" container>
+      <Suspense fallback={<div />}>
+        <LatestPushTime />
+      </Suspense>
+      <div className="flex space-x-6">
+        {icons.map((item) => (
+          <IconLink key={item.label} {...item} />
+        ))}
       </div>
     </Footer>
   );
 }
+// flex w-full flex-col items-center gap-y-4 xs:flex-row xs:justify-between xs:gap-y-0

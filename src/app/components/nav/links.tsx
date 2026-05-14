@@ -39,7 +39,11 @@ export default function NavLinks() {
           setActiveHref(`#${entry.target.id}`);
         }
       },
-      { threshold: 0.8, root: document },
+      {
+        root: null,
+        rootMargin: "-12% 0px -28% 0px",
+        threshold: 0.55,
+      },
     );
 
     Array.from(document.querySelectorAll("section")).forEach((section) => {
@@ -56,6 +60,9 @@ export default function NavLinks() {
       {links.map(({ href, label }) => (
         <NavbarLink
           active={(isClient ? activeHref : HOME) === href}
+          aria-current={
+            (isClient ? activeHref : HOME) === href ? "page" : undefined
+          }
           as={Link}
           className="scroll-smooth"
           href={href}

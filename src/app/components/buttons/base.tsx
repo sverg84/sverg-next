@@ -7,14 +7,6 @@ interface PropsCommon {
   label: string;
 }
 
-const className = [
-  "px-2 py-1",
-  "sm:px-3 sm:py-1.5",
-  "md:px-4 md:py-2",
-  "lg:px-5 lg:py-2.5",
-  "xl:px-6 xl:py-3",
-].reduce((acc, name) => `${acc} ${name}`, "");
-
 type Props = Readonly<PropsCommon>;
 
 export default function ExternalLinkButton({ href, Icon, label }: Props) {
@@ -29,16 +21,11 @@ export default function ExternalLinkButton({ href, Icon, label }: Props) {
         pill={true}
         rel="noopener noreferrer"
         target="_blank"
-        theme={{
-          outlineColor: {
-            sverg:
-              "text-white bg-cyan-700 border border-transparent dark:bg-emerald-300 focus:ring-4 focus:ring-cyan-600 dark:focus:ring-emerald-900 " +
-              "flex text-black dark:text-white hover:bg-cyan-700 hover:text-white justify-center bg-slate-50 transition-all dark:hover:bg-emerald-300 dark:hover:text-black duration-75 ease-in group-enabled:group-hover:bg-transparent group-enabled:group-hover:text-inherit dark:bg-gray-900 w-full " +
-              className,
-          },
-        }}
       >
-        <Icon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9" />
+        <Icon
+          className="h-6 w-6 text-current sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9"
+          aria-hidden
+        />
       </Button>
     </Tooltip>
   );
