@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Match Flowbite: DarkThemeToggle sets `dark` on <html>; Tailwind v4 defaults dark: to prefers-color-scheme only. */
+@custom-variant dark (&:where(.dark, .dark *));
 @import "flowbite-react/plugin/tailwindcss";
 @source "../../.flowbite-react/class-list.json";
 
@@ -9,17 +11,42 @@
   --color-night-sky: #283e51;
   --color-night-sky-2: #0a2342;
 
-  --cursor-grievous: url(https://dv8qyiytu2cuu.cloudfront.net/grievous_cursor.png),
-    auto;
-  --cursor-obi-wan: url(https://dv8qyiytu2cuu.cloudfront.net/obi_saber.png), auto;
+  /* Single page chrome (body, main, nav, hero floor) — light default */
+  --color-page-bg: #cfd8e8;
+  --color-page-border: #e2e8f0;
+
+  /* Hero mesh (blobs/scrim unchanged); floor matches page */
+  --color-hero-mesh-base: var(--color-page-bg);
+  --color-hero-mesh-floor: color-mix(in srgb, #334155 52%, transparent);
+  --color-hero-mesh-cyan: color-mix(in srgb, #0e7490 55%, transparent);
+  --color-hero-mesh-emerald: color-mix(in srgb, #047857 44%, transparent);
+  --color-hero-mesh-teal: color-mix(in srgb, #0f766e 44%, transparent);
+  --color-hero-mesh-sheen: color-mix(in srgb, #e0f2fe 55%, transparent);
+  /* Soft second hue (complements cyan/teal mesh) */
+  --color-hero-mesh-violet: color-mix(in srgb, #4f46e5 8%, transparent);
+
+  --cursor-grievous:
+    url(https://dv8qyiytu2cuu.cloudfront.net/grievous_cursor.png), auto;
+  --cursor-obi-wan:
+    url(https://dv8qyiytu2cuu.cloudfront.net/obi_saber.png), auto;
 
   --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
   --background-image-gradient-conic: conic-gradient(
     from 180deg at 50% 50%,
     var(--tw-gradient-stops)
   );
-  --background-image-hero: linear-gradient(250deg, #00000000 0%, #011c02 90%);
-  --background-image-hero-lg: linear-gradient(250deg, #00000000 0%, #062343 70%);
+  --background-image-hero: linear-gradient(
+    250deg,
+    #00000000 0%,
+    color-mix(in srgb, #334155 12%, transparent) 72%,
+    color-mix(in srgb, #1e293b 20%, transparent) 100%
+  );
+  --background-image-hero-lg: linear-gradient(
+    250deg,
+    #00000000 0%,
+    color-mix(in srgb, #475569 10%, transparent) 58%,
+    color-mix(in srgb, #1e293b 18%, transparent) 100%
+  );
   --background-image-utapau-dark: linear-gradient(
     to right,
     #a6ecff,
@@ -34,6 +61,36 @@
   );
 
   --animate-fade-in-right: fade-in-right 1s ease both;
+}
+
+html.dark {
+  --color-page-bg: #071018;
+  --color-page-border: #374151;
+  --color-hero-mesh-base: var(--color-page-bg);
+  --color-hero-mesh-floor: color-mix(
+    in srgb,
+    var(--color-night-sky-2) 85%,
+    black
+  );
+  --color-hero-mesh-cyan: color-mix(in srgb, #22d3ee 52%, transparent);
+  --color-hero-mesh-emerald: color-mix(in srgb, #6ee7b7 42%, transparent);
+  --color-hero-mesh-teal: color-mix(in srgb, #2dd4bf 38%, transparent);
+  --color-hero-mesh-sheen: color-mix(in srgb, #a7f3d0 18%, transparent);
+  --color-hero-mesh-violet: color-mix(in srgb, #a78bfa 24%, transparent);
+
+  /* Slate-weighted (not green) for consistent headline/body contrast vs mesh at all widths */
+  --background-image-hero: linear-gradient(
+    250deg,
+    #00000000 0%,
+    color-mix(in srgb, #0f172a 72%, black) 78%,
+    color-mix(in srgb, #020617 88%, black) 100%
+  );
+  --background-image-hero-lg: linear-gradient(
+    250deg,
+    #00000000 0%,
+    color-mix(in srgb, #0f172a 76%, black) 62%,
+    color-mix(in srgb, #020617 90%, black) 100%
+  );
 }
 
 @keyframes fade-in-right {
