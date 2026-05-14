@@ -4,21 +4,21 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Stephen Vergara",
     short_name: "sverg",
-    description: "Stephen's porfolio, powered by Next.js",
+    description: "Stephen's portfolio, powered by Next.js",
     display: "standalone",
     start_url: "/",
     icons: [
       {
-        purpose: "maskable",
-        src: "/favicon.ico",
+        purpose: "any",
+        src: "/icon.svg",
         sizes: "any",
-        type: "image/x-icon",
+        type: "image/svg+xml",
       },
       {
-        purpose: "any",
-        src: "/react.png",
-        sizes: "512x512",
-        type: "image/png",
+        purpose: "maskable",
+        src: "/icon.svg",
+        sizes: "any",
+        type: "image/svg+xml",
       },
     ],
     screenshots: [
@@ -26,7 +26,7 @@ export default function manifest(): MetadataRoute.Manifest {
       { form_factor: "wide", sizes: "2880x1626", src: "/desktop.png" },
       { form_factor: "narrow", sizes: "666x1452", src: "/mobile.png" },
     ],
-    background_color: "black",
-    theme_color: "black",
+    background_color: "#cfd8e8",
+    theme_color: "#cfd8e8",
   };
 }
