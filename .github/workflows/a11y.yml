@@ -30,3 +30,9 @@ jobs:
 
       - name: Run accessibility tests
         run: yarn test:a11y
+
+      - name: Notify Vercel
+        if: always()
+        uses: vercel/repository-dispatch/actions/status@v1
+        with:
+          name: Vercel - sverg-next: a11y
