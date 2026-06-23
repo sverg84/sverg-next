@@ -7,6 +7,7 @@ import HeroBackdrop from "./hero-backdrop";
 export default function Hero() {
   return (
     <section
+      aria-labelledby="home-heading"
       className="relative h-[calc(100vh-var(--nav-height))] w-full max-w-[100vw] overflow-hidden
         overflow-x-clip"
       id="home"
@@ -21,6 +22,7 @@ export default function Hero() {
           <h1
             className="max-w-sm text-center text-xl font-extrabold text-fg xs:max-w-lg
               xs:text-start xs:text-[2.125rem] sm:text-5xl/[3.5rem]"
+            id="home-heading"
           >
             Hi! I&apos;m Stephen, a{" "}
             <span className="text-brand-strong">senior frontend engineer</span>.
