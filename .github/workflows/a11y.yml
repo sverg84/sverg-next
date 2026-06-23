@@ -35,4 +35,4 @@ jobs:
         if: always()
         uses: vercel/repository-dispatch/actions/status@v1
         with:
-          name: Vercel - sverg-next: a11y
+          name: "Vercel - sverg-next: a11y"
