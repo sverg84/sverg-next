@@ -37,7 +37,7 @@ export default function Hero() {
             workflows (including team agent skills) to tighten iteration and
             coverage.
           </p>
-          <div className="flex gap-x-4 self-center">
+          <div className="flex gap-x-5 self-center sm:gap-x-6">
             <ResumeButton />
             <GitHubButton />
             <LinkedInButton />

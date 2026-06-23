@@ -67,7 +67,7 @@ export default function NavLinks({ mobile = false }: Props) {
           <Link
             aria-current={active ? "page" : undefined}
             className={cn(
-              "scroll-smooth rounded-lg px-3 py-2 text-sm font-medium transition-colors motion-reduce:transition-none",
+              "focus-ring scroll-smooth rounded-lg px-3 py-2 text-sm font-medium transition-colors motion-reduce:transition-none",
               mobile && "w-full",
               active
                 ? "text-brand"

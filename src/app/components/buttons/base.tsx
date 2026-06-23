@@ -20,7 +20,7 @@ export default function ExternalLinkButton({ href, Icon, label }: Props) {
       <TooltipTrigger
         render={
           <Button
-            className="rounded-full"
+            className="h-11 rounded-full px-4 py-0 sm:h-12 sm:px-5 md:h-14 md:px-6"
             nativeButton={false}
             render={
               <a
@@ -36,7 +36,7 @@ export default function ExternalLinkButton({ href, Icon, label }: Props) {
       >
         <Icon
           aria-hidden
-          className="h-6 w-6 text-current sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9"
+          className="size-7 sm:size-8 md:size-9"
         />
       </TooltipTrigger>
       <TooltipContent side="bottom">{label}</TooltipContent>

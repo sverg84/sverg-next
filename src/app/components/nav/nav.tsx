@@ -24,7 +24,7 @@ export default function Nav() {
       className="sticky top-0 z-50 w-full border-b border-border bg-page-bg backdrop-blur-sm"
     >
       <div className="mx-auto flex w-full items-center gap-4 px-4 py-3 sm:px-6">
-        <Link className="flex shrink-0 items-center gap-3" href="/">
+        <Link className="focus-ring flex shrink-0 items-center gap-3 rounded-lg" href="/">
           <Image
             alt=""
             className="h-6 w-6 xs:h-9 xs:w-9"

@@ -229,13 +229,19 @@ html.dark {
     }
   }
   .link {
-    @apply text-brand transition ease-linear hover:text-brand focus-visible:text-brand focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none motion-reduce:transition-none;
+    @apply focus-ring text-brand transition ease-linear hover:text-brand
+      focus-visible:text-brand motion-reduce:transition-none;
   }
   .timeline-stretched-link::after {
     content: "";
     position: absolute;
     inset: 0;
   }
+}
+
+@utility focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-ring
+    focus-visible:ring-offset-2 focus-visible:ring-offset-background;
 }
 
 @utility utapau {

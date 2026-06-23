@@ -34,12 +34,13 @@ function IconLink({ href, Icon, label }: IconLinkProps) {
   return (
     <a
       aria-label={`${label} (opens in a new tab)`}
-      className="link inline-flex rounded-sm text-fg-subtle outline-none"
+      className="focus-ring inline-flex rounded-sm text-fg-subtle transition-colors
+        hover:text-brand focus-visible:text-brand"
       href={href}
       rel="noopener noreferrer"
       target="_blank"
     >
-      <Icon aria-hidden size={20} />
+      <Icon aria-hidden className="size-5 text-current" />
     </a>
   );
 }

@@ -9,7 +9,8 @@ import { externalLinkLabel } from "@/lib/a11y";
 export default function AboutMeBody() {
   return (
     <section
-      className="body-section grid justify-items-center lg:grid-cols-2"
+      className="body-section grid justify-items-center gap-y-6 sm:gap-y-8 lg:grid-cols-2
+        lg:gap-y-4"
       id="about"
     >
       <h2 className="section-header lg:col-start-2 lg:justify-self-center">
