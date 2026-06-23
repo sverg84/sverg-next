@@ -1,8 +1,8 @@
 "use client";
 
-import { NavbarLink } from "flowbite-react";
 import Link from "next/link";
 import { startTransition, useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const HOME = "#home";
 
@@ -13,7 +13,11 @@ const links = [
   { href: "#projects", label: "Projects" },
 ];
 
-export default function NavLinks() {
+type Props = Readonly<{
+  mobile?: boolean;
+}>;
+
+export default function NavLinks({ mobile = false }: Props) {
   const [isClient, setIsClient] = useState(false);
   const [activeHref, setActiveHref] = useState(HOME);
 
@@ -57,20 +61,25 @@ export default function NavLinks() {
 
   return (
     <>
-      {links.map(({ href, label }) => (
-        <NavbarLink
-          active={(isClient ? activeHref : HOME) === href}
-          aria-current={
-            (isClient ? activeHref : HOME) === href ? "page" : undefined
-          }
-          as={Link}
-          className="scroll-smooth"
-          href={href}
-          key={label}
-        >
-          {label}
-        </NavbarLink>
-      ))}
+      {links.map(({ href, label }) => {
+        const active = (isClient ? activeHref : HOME) === href;
+        return (
+          <Link
+            aria-current={active ? "page" : undefined}
+            className={cn(
+              "scroll-smooth rounded-lg px-3 py-2 text-sm font-medium transition-colors motion-reduce:transition-none",
+              mobile && "w-full",
+              active
+                ? "text-brand"
+                : "text-fg-muted hover:text-brand focus-visible:text-brand",
+            )}
+            href={href}
+            key={label}
+          >
+            {label}
+          </Link>
+        );
+      })}
     </>
   );
 }

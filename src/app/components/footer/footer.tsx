@@ -1,8 +1,7 @@
-import type { IconType } from "react-icons";
-import { Footer } from "flowbite-react";
 import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiAlltrails, SiLetterboxd } from "react-icons/si";
 import { Suspense } from "react";
+import type { IconType } from "react-icons";
 import LatestPushTime from "./pushtime";
 
 type IconLinkProps = Readonly<{ href: string; Icon: IconType; label: string }>;
@@ -35,13 +34,9 @@ function IconLink({ href, Icon, label }: IconLinkProps) {
   return (
     <a
       aria-label={`${label} (opens in a new tab)`}
-      className="link inline-flex rounded-sm text-gray-600 outline-none hover:text-cyan-700
-        focus-visible:text-cyan-700 focus-visible:ring-2 focus-visible:ring-cyan-700
-        focus-visible:ring-offset-1 focus-visible:ring-offset-[var(--color-page-bg)]
-        focus-visible:outline-none dark:text-gray-300 dark:hover:text-emerald-300
-        dark:focus-visible:text-emerald-300 dark:focus-visible:ring-emerald-400
-        dark:focus-visible:ring-offset-[var(--color-page-bg)]"
+      className="link inline-flex rounded-sm text-fg-subtle outline-none"
       href={href}
+      rel="noopener noreferrer"
       target="_blank"
     >
       <Icon size={20} />
@@ -51,19 +46,22 @@ function IconLink({ href, Icon, label }: IconLinkProps) {
 
 export default function AppFooter() {
   return (
-    <Footer
-      className="rounded-none border-t border-page-border bg-page-bg"
-      container
+    <footer
+      className="w-full rounded-none border-t border-border bg-page-bg"
     >
-      <Suspense fallback={<div />}>
-        <LatestPushTime />
-      </Suspense>
-      <div className="flex space-x-6">
-        {icons.map((item) => (
-          <IconLink key={item.label} {...item} />
-        ))}
+      <div
+        className="flex w-full flex-col items-center gap-y-4 p-6 xs:flex-row xs:justify-between
+          xs:gap-y-0"
+      >
+        <Suspense fallback={<div />}>
+          <LatestPushTime />
+        </Suspense>
+        <div className="flex space-x-6">
+          {icons.map((item) => (
+            <IconLink key={item.label} {...item} />
+          ))}
+        </div>
       </div>
-    </Footer>
+    </footer>
   );
 }
-// flex w-full flex-col items-center gap-y-4 xs:flex-row xs:justify-between xs:gap-y-0

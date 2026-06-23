@@ -1,4 +1,5 @@
-import { Badge } from "flowbite-react";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 type Props = Readonly<{
   className?: string;
@@ -8,9 +9,12 @@ type Props = Readonly<{
 export default function TimelineBadge({ className, label }: Props) {
   return (
     <Badge
-      className={`rounded-lg px-1 py-[0.0625rem] text-[0.6rem] text-cyan-700
-        group-hover:bg-cyan-100 md:px-2 md:py-0.5 md:text-xs dark:bg-emerald-800
-        dark:text-emerald-300 dark:group-hover:bg-emerald-800 ${className}`}
+      className={cn(
+        `rounded-lg px-1 py-[0.0625rem] text-[0.6rem] text-brand
+        group-hover:bg-brand-subtle md:px-2 md:py-0.5 md:text-xs`,
+        className,
+      )}
+      variant="secondary"
     >
       {label}
     </Badge>

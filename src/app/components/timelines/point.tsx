@@ -1,6 +1,3 @@
-"use client";
-
-import { TimelinePoint } from "flowbite-react";
 import {
   PiChefHatFill,
   PiPianoKeysFill,
@@ -16,8 +13,10 @@ import {
   SiSass,
 } from "react-icons/si";
 import { SlLink } from "react-icons/sl";
+import { createElement } from "react";
+import type { IconType } from "react-icons";
 
-const icons = new Map([
+const icons = new Map<string, IconType>([
   ["coinbase", SiCoinbase],
   ["fb-intern", SiFacebook],
   ["kitchenkin", PiChefHatFill],
@@ -36,5 +35,19 @@ type Props = Readonly<{
 }>;
 
 export default function Point({ iconId }: Props) {
-  return <TimelinePoint icon={icons.get(iconId)} />;
+  const Icon = icons.get(iconId);
+  if (!Icon) return null;
+
+  return (
+    <div aria-hidden className="absolute top-1.5 -left-[1.125rem] md:top-0 md:-left-7">
+      <span
+        className="flex size-3 items-center justify-center rounded-full bg-timeline-marker-bg
+          ring-4 ring-timeline-marker-ring md:size-6 md:ring-8"
+      >
+        {createElement(Icon, {
+          className: "size-[0.375rem] text-timeline-marker-icon md:size-3",
+        })}
+      </span>
+    </div>
+  );
 }

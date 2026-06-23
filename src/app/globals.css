@@ -1,8 +1,7 @@
 @import "tailwindcss";
-/* Match Flowbite: DarkThemeToggle sets `dark` on <html>; Tailwind v4 defaults dark: to prefers-color-scheme only. */
+@import "tw-animate-css";
+/* next-themes sets `dark` on <html>; Tailwind v4 defaults dark: to prefers-color-scheme only. */
 @custom-variant dark (&:where(.dark, .dark *));
-@import "flowbite-react/plugin/tailwindcss";
-@source "../../.flowbite-react/class-list.json";
 
 @theme {
   --breakpoint-2xs: 360px;
@@ -15,6 +14,24 @@
   --color-page-bg: #cfd8e8;
   --color-page-border: #e2e8f0;
 
+  /* Brand primitives (light) */
+  --color-brand: #0e7490;
+  --color-brand-strong: #155e75;
+  --color-brand-subtle: #cffafe;
+  --color-brand-border: #67e8f9;
+  --color-fg: #0f172a;
+  --color-fg-muted: #475569;
+  --color-fg-subtle: #4b5563;
+  --color-surface-hover: color-mix(in srgb, #e2e8f0 55%, transparent);
+  --color-skip-bg: #155e75;
+
+  /* Timeline + layout */
+  --color-timeline-marker-icon: #0e7490;
+  --color-timeline-marker-bg: #cffafe;
+  --color-timeline-marker-ring: #f9fafb;
+  --nav-height: 3.75rem;
+  --focus-ring-width: 2px;
+
   /* Hero mesh (blobs/scrim unchanged); floor matches page */
   --color-hero-mesh-base: var(--color-page-bg);
   --color-hero-mesh-floor: color-mix(in srgb, #334155 52%, transparent);
@@ -22,7 +39,6 @@
   --color-hero-mesh-emerald: color-mix(in srgb, #047857 44%, transparent);
   --color-hero-mesh-teal: color-mix(in srgb, #0f766e 44%, transparent);
   --color-hero-mesh-sheen: color-mix(in srgb, #e0f2fe 55%, transparent);
-  /* Soft second hue (complements cyan/teal mesh) */
   --color-hero-mesh-violet: color-mix(in srgb, #4f46e5 8%, transparent);
 
   --cursor-grievous:
@@ -61,11 +77,83 @@
   );
 
   --animate-fade-in-right: fade-in-right 1s ease both;
+
+  /* shadcn semantic color utilities */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: var(--color-page-bg);
+  --foreground: #000000;
+  --border: var(--color-page-border);
+  --input: var(--color-page-border);
+  --ring: #0891b2;
+  --ring-offset-background: var(--color-page-bg);
+
+  --primary: var(--color-brand-strong);
+  --primary-foreground: #ffffff;
+
+  --secondary: #f1f5f9;
+  --secondary-foreground: var(--color-fg);
+
+  --muted: #f1f5f9;
+  --muted-foreground: var(--color-fg-muted);
+
+  --accent: var(--color-brand-subtle);
+  --accent-foreground: var(--color-brand);
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --popover: var(--color-page-bg);
+  --popover-foreground: #000000;
+
+  --card: var(--color-page-bg);
+  --card-foreground: #000000;
+
+  --radius: 0.5rem;
 }
 
 html.dark {
   --color-page-bg: #071018;
   --color-page-border: #374151;
+
+  --color-brand: #6ee7b7;
+  --color-brand-strong: #a7f3d0;
+  --color-brand-subtle: #065f46;
+  --color-brand-border: #34d399;
+  --color-fg: #f8fafc;
+  --color-fg-muted: #e2e8f0;
+  --color-fg-subtle: #d1d5db;
+  --color-surface-hover: color-mix(in srgb, #1e293b 50%, transparent);
+  --color-skip-bg: #065f46;
+
+  --color-timeline-marker-icon: #6ee7b7;
+  --color-timeline-marker-bg: #065f46;
+  --color-timeline-marker-ring: #111827;
+
   --color-hero-mesh-base: var(--color-page-bg);
   --color-hero-mesh-floor: color-mix(
     in srgb,
@@ -78,7 +166,6 @@ html.dark {
   --color-hero-mesh-sheen: color-mix(in srgb, #a7f3d0 18%, transparent);
   --color-hero-mesh-violet: color-mix(in srgb, #a78bfa 24%, transparent);
 
-  /* Slate-weighted (not green) for consistent headline/body contrast vs mesh at all widths */
   --background-image-hero: linear-gradient(
     250deg,
     #00000000 0%,
@@ -91,6 +178,18 @@ html.dark {
     color-mix(in srgb, #0f172a 76%, black) 62%,
     color-mix(in srgb, #020617 90%, black) 100%
   );
+
+  --foreground: #ffffff;
+  --ring: #10b981;
+  --ring-offset-background: var(--color-page-bg);
+  --secondary: #1e293b;
+  --muted: #1e293b;
+  --muted-foreground: var(--color-fg-subtle);
+  --accent-foreground: var(--color-brand);
+  --popover: var(--color-page-bg);
+  --popover-foreground: #ffffff;
+  --card: var(--color-page-bg);
+  --card-foreground: #ffffff;
 }
 
 @keyframes fade-in-right {
@@ -110,6 +209,10 @@ html.dark {
     scroll-behavior: smooth;
     scroll-padding-top: var(--spacing-20);
   }
+
+  * {
+    @apply border-border;
+  }
 }
 
 @layer components {
@@ -126,9 +229,12 @@ html.dark {
     }
   }
   .link {
-    @apply hover:text-cyan-700 dark:hover:text-emerald-300;
-    @apply focus-visible:text-cyan-700 dark:focus-visible:text-emerald-300;
-    @apply transition ease-linear motion-reduce:transition-none;
+    @apply text-brand transition ease-linear hover:text-brand focus-visible:text-brand focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none motion-reduce:transition-none;
+  }
+  .timeline-stretched-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
   }
 }
 

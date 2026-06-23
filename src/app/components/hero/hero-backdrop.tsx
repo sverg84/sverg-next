@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import {
   motion,
   useMotionValue,
@@ -7,7 +9,6 @@ import {
   useSpring,
   useTransform,
 } from "motion/react";
-import { useEffect } from "react";
 
 type BlobConfig = {
   left: string;
@@ -134,7 +135,14 @@ function PointerSheen({ reduceMotion }: { reduceMotion: boolean }) {
 }
 
 export default function HeroBackdrop() {
-  const reduceMotion = useReducedMotion() ?? false;
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
+  const prefersReducedMotion = useReducedMotion() ?? false;
+
+  const reduceMotion = !mounted || prefersReducedMotion;
 
   return (
     <div

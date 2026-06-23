@@ -1,5 +1,12 @@
+"use client";
+
 import TimelineBadge from "./badge";
-import { Tooltip } from "flowbite-react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
 
 type Props = Readonly<{
   id: string;
@@ -13,41 +20,49 @@ export default function TimelineSkills({ id, skills }: Props) {
     0,
     skills.length > MAX_BADGES ? MAX_BADGES - 1 : MAX_BADGES,
   );
+  const overflowSkills =
+    skills.length > MAX_BADGES ? skills.slice(MAX_BADGES - 1) : [];
+
   return (
-    <div className="flex flex-wrap gap-x-4 gap-y-2">
+    <ul
+      aria-label="Skills"
+      className="flex list-none flex-wrap gap-x-4 gap-y-2"
+    >
       {skillsFirstSlice.map((skill) => (
-        <TimelineBadge label={skill} key={`${id}-${skill}`} />
+        <li key={`${id}-${skill}`}>
+          <TimelineBadge label={skill} />
+        </li>
       ))}
-      {skills.length > MAX_BADGES &&
-        skills
-          .slice(MAX_BADGES - 1)
-          .map((skill) => (
-            <TimelineBadge
-              className="hidden lg:block"
-              label={skill}
-              key={`${id}-${skill}`}
-            />
-          ))}
-      {skills.length > MAX_BADGES && (
-        <Tooltip
-          className="text-center lg:hidden"
-          // Local only: `lg:hidden` target would break default tooltips if applied globally.
-          content={
-            <div className="flex flex-col">
-              {skills.slice(MAX_BADGES - 1).map((skill) => (
-                <span key={skill}>{skill}</span>
-              ))}
-            </div>
-          }
-          placement="bottom"
-          theme={{ target: "lg:hidden" }}
-        >
-          <TimelineBadge
-            className="lg:hidden"
-            label={`+${skills.length - MAX_BADGES + 1}`}
-          />
-        </Tooltip>
+      {overflowSkills.map((skill) => (
+        <li className="hidden lg:list-item" key={`${id}-${skill}`}>
+          <TimelineBadge label={skill} />
+        </li>
+      ))}
+      {overflowSkills.length > 0 && (
+        <li className="lg:hidden">
+          <Popover>
+            <PopoverTrigger
+              render={
+                <Button
+                  className="h-auto rounded-lg px-1 py-[0.0625rem] text-[0.6rem] font-medium
+                    md:px-2 md:py-0.5 md:text-xs"
+                  type="button"
+                  variant="secondary"
+                />
+              }
+            >
+              +{overflowSkills.length}
+            </PopoverTrigger>
+            <PopoverContent align="start" className="w-auto min-w-32">
+              <ul className="flex flex-col gap-1 text-sm">
+                {overflowSkills.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
+            </PopoverContent>
+          </Popover>
+        </li>
       )}
-    </div>
+    </ul>
   );
 }
