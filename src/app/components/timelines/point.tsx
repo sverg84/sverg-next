@@ -39,7 +39,10 @@ export default function Point({ iconId }: Props) {
   if (!Icon) return null;
 
   return (
-    <div aria-hidden className="absolute top-1.5 -left-[1.125rem] md:top-0 md:-left-7">
+    <div
+      aria-hidden
+      className="absolute top-0 left-0 z-10 -translate-x-1/2"
+    >
       <span
         className="flex size-3 items-center justify-center rounded-full bg-timeline-marker-bg
           ring-4 ring-timeline-marker-ring md:size-6 md:ring-8"

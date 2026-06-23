@@ -4,6 +4,7 @@ import sverg from "../../../../public/sverg.webp";
 import MyName from "@/app/consts/name";
 import Utapau from "./utapau";
 import Link from "next/link";
+import { externalLinkLabel } from "@/lib/a11y";
 
 export default function AboutMeBody() {
   return (
@@ -26,8 +27,10 @@ export default function AboutMeBody() {
           My first time programming was when my high school introduced me to
           Scratch during an annual{" "}
           <Link
+            aria-label={externalLinkLabel("Hour of Code")}
             className="link font-bold"
             href="https://hourofcode.com/us"
+            rel="noopener noreferrer"
             target="_blank"
           >
             Hour of Code
@@ -64,8 +67,10 @@ export default function AboutMeBody() {
           karaoke, and playing video games! I am very into science fiction and
           fantasy, and love a good happy hour and{" "}
           <Link
+            aria-label={externalLinkLabel("DnD Beyond")}
             className="link font-bold"
             href="https://www.dndbeyond.com"
+            rel="noopener noreferrer"
             target="_blank"
           >
             DnD

@@ -44,6 +44,7 @@ export default function TimelineSkills({ id, skills }: Props) {
             <PopoverTrigger
               render={
                 <Button
+                  aria-label={`${overflowSkills.length} more skills`}
                   className="h-auto rounded-lg px-1 py-[0.0625rem] text-[0.6rem] font-medium
                     md:px-2 md:py-0.5 md:text-xs"
                   type="button"
