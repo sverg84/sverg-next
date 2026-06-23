@@ -15,8 +15,8 @@
   --color-page-border: #e2e8f0;
 
   /* Brand primitives (light) */
-  --color-brand: #0e7490;
-  --color-brand-strong: #155e75;
+  --color-brand: #155e75;
+  --color-brand-strong: #0f4c5c;
   --color-brand-subtle: #cffafe;
   --color-brand-border: #67e8f9;
   --color-fg: #0f172a;
@@ -26,7 +26,7 @@
   --color-skip-bg: #155e75;
 
   /* Timeline + layout */
-  --color-timeline-marker-icon: #0e7490;
+  --color-timeline-marker-icon: #155e75;
   --color-timeline-marker-bg: #cffafe;
   --color-timeline-marker-ring: #f9fafb;
   --nav-height: 3.75rem;

@@ -39,7 +39,7 @@ function IconLink({ href, Icon, label }: IconLinkProps) {
       rel="noopener noreferrer"
       target="_blank"
     >
-      <Icon size={20} />
+      <Icon aria-hidden size={20} />
     </a>
   );
 }
