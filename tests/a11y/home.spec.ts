@@ -1,23 +1,35 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-test.describe("homepage accessibility", () => {
-  test("has no critical or serious axe violations", async ({ page }) => {
-    await page.goto("/");
+const themes = ["light", "dark"] as const;
 
-    const results = await new AxeBuilder({ page }).analyze();
+for (const theme of themes) {
+  test.describe(`homepage accessibility (${theme})`, () => {
+    test("has no critical or serious axe violations", async ({ page }) => {
+      await page.addInitScript((selectedTheme) => {
+        localStorage.setItem("theme", selectedTheme);
+      }, theme);
 
-    const seriousViolations = results.violations.filter(
-      (violation) =>
-        violation.impact === "critical" || violation.impact === "serious",
-    );
+      await page.goto("/");
 
-    expect(
-      seriousViolations,
-      formatViolations(seriousViolations),
-    ).toEqual([]);
+      await page
+        .locator(theme === "dark" ? "html.dark" : "html:not(.dark)")
+        .waitFor();
+
+      const results = await new AxeBuilder({ page }).analyze();
+
+      const seriousViolations = results.violations.filter(
+        (violation) =>
+          violation.impact === "critical" || violation.impact === "serious",
+      );
+
+      expect(
+        seriousViolations,
+        formatViolations(seriousViolations),
+      ).toEqual([]);
+    });
   });
-});
+}
 
 function formatViolations(
   violations: Awaited<ReturnType<AxeBuilder["analyze"]>>["violations"],
