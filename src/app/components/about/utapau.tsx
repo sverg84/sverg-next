@@ -1,21 +1,27 @@
-import { Tooltip } from "flowbite-react";
+"use client";
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function Utapau() {
   return (
-    <Tooltip
-      content="General Kenobi!"
-      // Local only: custom cursor + target; app-wide tooltip theme must stay default for hero/social.
-      theme={{
-        base: "cursor-grievous absolute inline-block z-10 rounded-lg py-2 px-3 text-sm font-medium shadow-xs",
-        target: "self-center h-fit w-fit",
-      }}
-    >
-      <span
-        className="text-lg font-bold lg:utapau lg:bg-utapau-light lg:hover:bg-[position:0_100%]
-          lg:dark:bg-utapau-dark"
-      >
-        Hello there!
-      </span>
-    </Tooltip>
+    <div className="self-center">
+      <Tooltip>
+        <TooltipTrigger
+          render={
+            <span
+              className="inline-block w-fit cursor-grievous text-lg font-bold lg:utapau
+                lg:bg-utapau-light lg:hover:bg-[position:0_100%] lg:dark:bg-utapau-dark"
+            />
+          }
+        >
+          Hello there!
+        </TooltipTrigger>
+        <TooltipContent>General Kenobi!</TooltipContent>
+      </Tooltip>
+    </div>
   );
 }

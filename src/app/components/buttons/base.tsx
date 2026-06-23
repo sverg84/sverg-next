@@ -1,5 +1,10 @@
 import type { IconType } from "react-icons";
-import { Button, Tooltip } from "flowbite-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
 
 interface PropsCommon {
   Icon: IconType;
@@ -11,22 +16,30 @@ type Props = Readonly<PropsCommon>;
 
 export default function ExternalLinkButton({ href, Icon, label }: Props) {
   return (
-    <Tooltip content={label} placement="bottom">
-      <Button
-        as="a"
-        aria-label={label}
-        color="sverg"
-        href={href}
-        outline={true}
-        pill={true}
-        rel="noopener noreferrer"
-        target="_blank"
+    <Tooltip>
+      <TooltipTrigger
+        render={
+          <Button
+            className="h-11 rounded-full px-4 py-0 sm:h-12 sm:px-5 md:h-14 md:px-6"
+            nativeButton={false}
+            render={
+              <a
+                aria-label={label}
+                href={href}
+                rel="noopener noreferrer"
+                target="_blank"
+              />
+            }
+            variant="sverg"
+          />
+        }
       >
         <Icon
-          className="h-6 w-6 text-current sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9"
           aria-hidden
+          className="size-7 sm:size-8 md:size-9"
         />
-      </Button>
+      </TooltipTrigger>
+      <TooltipContent side="bottom">{label}</TooltipContent>
     </Tooltip>
   );
 }

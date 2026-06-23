@@ -1,0 +1,32 @@
+name: Accessibility
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Yarn
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Install Playwright browsers
+        run: yarn playwright install chromium --with-deps
+
+      - name: Run accessibility tests
+        run: yarn test:a11y

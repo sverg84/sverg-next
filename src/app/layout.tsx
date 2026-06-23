@@ -1,15 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeModeScript } from "flowbite-react";
-import { ThemeInit } from "../../.flowbite-react/init";
 import Nav from "./components/nav/nav";
 import AppFooter from "./components/footer/footer";
-import FlowbiteThemeRoot from "./components/flowbite-theme-root";
 import SkipLink from "./components/skip-link";
 import ThemeColorSync from "./components/theme-color-sync";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "@/components/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,20 +45,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <head>
-        <ThemeModeScript />
-      </head>
-      <body
-        className={`${inter.className} bg-page-bg text-black dark:text-white`}
-      >
-        <SkipLink />
-        <ThemeInit />
-        <ThemeColorSync />
-        <FlowbiteThemeRoot>
-          <Nav />
-          {children}
-          <AppFooter />
-        </FlowbiteThemeRoot>
+      <body className={`${inter.className} bg-page-bg text-foreground`}>
+        <ThemeProvider>
+          <TooltipProvider>
+            <SkipLink />
+            <ThemeColorSync />
+            <Nav />
+            {children}
+            <AppFooter />
+          </TooltipProvider>
+        </ThemeProvider>
         <SpeedInsights />
         <Analytics />
       </body>

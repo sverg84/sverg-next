@@ -2,13 +2,16 @@
 
 import { useLayoutEffect } from "react";
 
-/** Matches `--color-page-bg` in globals.css (light / html.dark). */
-const THEME_COLOR_LIGHT = "#cfd8e8";
-const THEME_COLOR_DARK = "#071018";
+function readPageBgColor(): string {
+  return getComputedStyle(document.documentElement)
+    .getPropertyValue("--color-page-bg")
+    .trim();
+}
 
 function applyThemeColor() {
-  const isDark = document.documentElement.classList.contains("dark");
-  const content = isDark ? THEME_COLOR_DARK : THEME_COLOR_LIGHT;
+  const content = readPageBgColor();
+  if (!content) return;
+
   const metas = document.querySelectorAll('meta[name="theme-color"]');
   if (metas.length === 0) {
     const meta = document.createElement("meta");
@@ -25,7 +28,7 @@ function applyThemeColor() {
 }
 
 /**
- * Keeps browser `theme-color` in sync with Flowbite `html.dark` (user toggle),
+ * Keeps browser `theme-color` in sync with `html.dark` (user toggle),
  * which can diverge from `prefers-color-scheme` alone.
  */
 export default function ThemeColorSync() {

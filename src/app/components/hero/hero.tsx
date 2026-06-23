@@ -7,7 +7,8 @@ import HeroBackdrop from "./hero-backdrop";
 export default function Hero() {
   return (
     <section
-      className="relative h-[calc(100vh-3.75rem)] w-full max-w-[100vw] overflow-hidden
+      aria-labelledby="home-heading"
+      className="relative h-[calc(100vh-var(--nav-height))] w-full max-w-[100vw] overflow-hidden
         overflow-x-clip"
       id="home"
     >
@@ -19,18 +20,15 @@ export default function Hero() {
       <div className="relative z-10 flex h-full flex-col justify-center gap-y-10 xs:mx-8 sm:mr-24">
         <div className="flex flex-col gap-y-10 place-self-center md:self-start">
           <h1
-            className="max-w-sm text-center text-xl font-extrabold text-slate-900 xs:max-w-lg
-              xs:text-start xs:text-[2.125rem] sm:text-5xl/[3.5rem] dark:text-white"
+            className="max-w-sm text-center text-xl font-extrabold text-fg xs:max-w-lg
+              xs:text-start xs:text-[2.125rem] sm:text-5xl/[3.5rem]"
+            id="home-heading"
           >
             Hi! I&apos;m Stephen, a{" "}
-            <span className="text-cyan-800 dark:text-emerald-200">
-              senior frontend engineer
-            </span>
-            .
+            <span className="text-brand-strong">senior frontend engineer</span>.
           </h1>
           <p
-            className="xs:text-md max-w-sm text-center text-sm text-slate-600 xs:text-start sm:max-w-lg
-              dark:text-slate-200"
+            className="xs:text-md max-w-sm text-center text-sm text-fg-muted xs:text-start sm:max-w-lg"
           >
             Senior frontend engineer (TypeScript, React, React Native) shipping
             accessible, performant interfaces—and the patterns, docs, and tests
@@ -39,7 +37,7 @@ export default function Hero() {
             workflows (including team agent skills) to tighten iteration and
             coverage.
           </p>
-          <div className="flex gap-x-4 self-center">
+          <div className="flex gap-x-5 self-center sm:gap-x-6">
             <ResumeButton />
             <GitHubButton />
             <LinkedInButton />
